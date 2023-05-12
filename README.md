@@ -1,2 +1,2 @@
-# FreshGrocie---BANGKIT-PROJECT
+# FreshGrocie app is a BANGKIT-PROJECT
 BANGKIT 2023 Capstone Project, Go To Best Project
