@@ -1,7 +1,8 @@
-package com.bangkit.capstone.freshgrocie
+package com.bangkit.freshgrocie
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

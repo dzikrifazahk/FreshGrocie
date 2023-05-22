@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.bangkit.capstone.freshgrocie'
+    namespace 'com.bangkit.freshgrocie'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.bangkit.capstone.freshgrocie"
+        applicationId "com.bangkit.freshgrocie"
         minSdk 21
         targetSdk 33
         versionCode 1

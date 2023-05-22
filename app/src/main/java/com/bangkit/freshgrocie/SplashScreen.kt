@@ -1,4 +1,4 @@
-package com.bangkit.capstone.freshgrocie
+package com.bangkit.freshgrocie
 
 import android.content.Intent
 import android.os.Bundle
