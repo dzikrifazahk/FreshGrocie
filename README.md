@@ -5,11 +5,11 @@
 ![Brawijaya](https://github.com/Dzikrifaza/FreshGrocie/blob/mobile_dev/Brawijaya?raw=true)
 ![Politeknik Negeri Indamayu](https://github.com/Dzikrifaza/FreshGrocie/blob/mobile_dev/Polindra?raw=true)
 
-### Delegasi Politeknik Negeri Indramayu
+### Delegate of Politeknik Negeri Indramayu
 - Filemon Sitanggang - Mobile Developer
 - Dzikri Faza Hauna Kusnadi - Mobile Developer
 - Aditya Hadi - Cloud Computing
-### Delegasi Universitas Brawijaya
+### Delegate of Universitas Brawijaya
 - Rahma
 - Samuel
 - Diana
