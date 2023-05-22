@@ -1,4 +1,4 @@
-package com.bangkit.freshgrocie
+package com.bangkit.capstone.freshgrocie
 
 import org.junit.Test
 
