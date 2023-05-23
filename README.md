@@ -22,9 +22,9 @@
 - Dzikri Faza Hauna Kusnadi - Mobile Developer
 - Aditya Hadi - Cloud Computing
 ### Delegate of Universitas Brawijaya
-- Rahma
-- Samuel
-- Diana
+- Rahma Nur Fitriyani - Machine Learning Developer
+- Diana Ayu Suma Putri - Machine Learning Developer
+- Samuel Djodi - Cloud Computing
 
 # *BANGKIT 2023 Capstone Project, Go To Best Project*
 
