@@ -17,7 +17,7 @@
             android:exported="false" />
         <activity
             android:name=".OnboardingActivity"
-            android:exported="false" />
+             />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".SplashScreen"

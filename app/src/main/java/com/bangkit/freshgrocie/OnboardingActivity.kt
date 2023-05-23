@@ -58,4 +58,5 @@ class OnboardingActivity : AppCompatActivity() {
     private fun getItem(): Int {
         return mViewPager.currentItem
     }
+
 }

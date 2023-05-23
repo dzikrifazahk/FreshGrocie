@@ -1,9 +1,11 @@
 package com.bangkit.freshgrocie
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import com.airbnb.lottie.LottieAnimationView
@@ -16,7 +18,7 @@ class OnboardingFragment : Fragment() {
     private var imageResource = 0
     private lateinit var tvTitle: AppCompatTextView
     private lateinit var tvDescription: AppCompatTextView
-    private lateinit var image: LottieAnimationView
+    private lateinit var image: ImageView
     private var param1: String? = null
     private var param2: String? = null
     private var _binding: FragmentOnboardingBinding? = null
@@ -42,7 +44,6 @@ class OnboardingFragment : Fragment() {
         image = binding.imageOnboarding
         tvTitle.text = title
         tvDescription.text = description
-        image.setAnimation(imageResource)
         return view
     }
 
@@ -62,13 +63,13 @@ class OnboardingFragment : Fragment() {
         fun newInstance(
             title: String?,
             description: String?,
-            imageResource: Int
+            imageResource: Drawable
         ): OnboardingFragment {
             val fragment = OnboardingFragment()
             val args = Bundle()
             args.putString(ARG_PARAM1, title)
             args.putString(ARG_PARAM2, description)
-            args.putInt(ARG_PARAM3, imageResource)
+            args.putString(ARG_PARAM3, imageResource.toString())
             fragment.arguments = args
             return fragment
         }
