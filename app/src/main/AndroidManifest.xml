@@ -10,16 +10,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FreshGrocie"
+        android:theme="@style/AppTheme.NoActionBar"
         tools:targetApi="31">
         <activity
             android:name=".OnboardingFinish"
             android:exported="false" />
         <activity
             android:name=".OnboardingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Onboarding"
             android:exported="false" />
         <activity android:name=".MainActivity" />
         <activity
