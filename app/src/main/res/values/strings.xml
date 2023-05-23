@@ -16,11 +16,12 @@
     <string name="skip">Skip</string>
     <string name="finish">finish</string>
     <string name="next">NEXT</string>
-    <string name="back">BACK</string>
+    <string name="back">SKIP</string>
     <string name="getting_started">Getting Started</string>
-    <integer-array name="photos_cv">
-        <item>@drawable/page1</item>
-        <item>@drawable/page2</item>
-        <item>@drawable/page3</item>
-    </integer-array>
+
+    <string-array name="Languages">
+        <item>English</item>
+        <item>Bahasa Indonesia</item>
+    </string-array>
+    <string name="selected_item">Selected item:</string>
 </resources>

@@ -1,7 +1,13 @@
 package com.bangkit.freshgrocie
 
 import android.os.Bundle
+import android.view.View
+import android.widget.AbsSpinner
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.bangkit.freshgrocie.databinding.ActivityOnboardingBinding
@@ -12,6 +18,7 @@ class OnboardingActivity : AppCompatActivity() {
     private lateinit var mViewPager: ViewPager2
     private lateinit var btnBack: Button
     private lateinit var btnNext: Button
+    private lateinit var Spin: Spinner
 
     private lateinit var binding: ActivityOnboardingBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,10 +27,34 @@ class OnboardingActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         mViewPager = binding.viewPager
+        Spin = binding.spinner
         mViewPager.adapter = OnboardingAdapter(this, this)
         mViewPager.offscreenPageLimit = 1
         btnBack = binding.btnPreviousStep
         btnNext = binding.btnNextStep
+        val languages = resources.getStringArray(R.array.Languages)
+        if (Spin != null) {
+            val adapter = ArrayAdapter(this,
+                android.R.layout.simple_spinner_item, languages)
+            Spin.adapter = adapter
+            Spin.onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View, position: Int, id: Long
+                ) {
+                    Toast.makeText(
+                        this@OnboardingActivity,
+                        getString(R.string.selected_item) + " " +
+                                "" + languages[position], Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>) {
+                    // write code to perform some action
+                }
+            }
+        }
         mViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 if (position == 2) {
