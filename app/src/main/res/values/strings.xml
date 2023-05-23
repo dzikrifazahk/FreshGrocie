@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Onboarding ViewPager Examples</string>
+    <string name="app_name">Fresh Grocie</string>
 
     <string name="title_onboarding_1">Let\'s Find Market Nearest You</string>
     <string name="description_onboarding_1">Find the nearest vegetable and fruit market from your location</string>
@@ -15,7 +15,12 @@
     <string name="start">start</string>
     <string name="skip">Skip</string>
     <string name="finish">finish</string>
-    <string name="next">next</string>
-    <string name="back">back</string>
+    <string name="next">NEXT</string>
+    <string name="back">BACK</string>
     <string name="getting_started">Getting Started</string>
+    <integer-array name="photos_cv">
+        <item>@drawable/page1</item>
+        <item>@drawable/page2</item>
+        <item>@drawable/page3</item>
+    </integer-array>
 </resources>

@@ -17,17 +17,17 @@ class OnboardingAdapter(
             0 -> OnboardingFragment.newInstance(
                 context.resources.getString(R.string.title_onboarding_1),
                 context.resources.getString(R.string.description_onboarding_1),
-                context.resources.getDrawable(R.drawable.page1)
+                R.drawable.page1
             )
             1 -> OnboardingFragment.newInstance(
                 context.resources.getString(R.string.title_onboarding_2),
                 context.resources.getString(R.string.description_onboarding_2),
-                context.resources.getDrawable(R.drawable.page2)
+                R.drawable.page2
             )
             else -> OnboardingFragment.newInstance(
                 context.resources.getString(R.string.title_onboarding_3),
                 context.resources.getString(R.string.description_onboarding_3),
-                context.resources.getDrawable(R.drawable.page3)
+                R.drawable.page3
             )
         }
     }

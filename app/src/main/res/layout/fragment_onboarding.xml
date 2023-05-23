@@ -9,6 +9,7 @@
 
     <ImageView
         android:id="@+id/image_onboarding"
+        android:src="@drawable/page1"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_centerHorizontal="true"
@@ -16,7 +17,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="30dp"
-        android:scaleType="centerCrop"
+        android:scaleType="centerInside"
 />
 
 
@@ -25,13 +26,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/image_onboarding"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
         android:text="@string/title_onboarding_1"
-        android:textSize="19sp"
+        android:textSize="24sp"
         android:gravity="center"
         android:textStyle="bold"
-        android:textColor="@color/md_green_A100"/>
+        android:textColor="@color/md_black_1000"/>
 
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -39,13 +40,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_onboarding_title"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="40dp"
         android:gravity="center"
         android:text="@string/description_onboarding_1"
-        android:textColor="@color/md_black_1000"
+        android:textColor="@color/dark_grey"
         android:textSize="14sp" />
 
 </RelativeLayout>

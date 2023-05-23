@@ -28,7 +28,7 @@ class OnboardingFragment : Fragment() {
         if (arguments != null) {
             title = requireArguments().getString(ARG_PARAM1)!!
             description = requireArguments().getString(ARG_PARAM2)!!
-            imageResource = requireArguments().getInt(ARG_PARAM3)
+            imageResource = requireArguments().getInt(ARG_PARAM3)!!
         }
     }
 
@@ -44,6 +44,7 @@ class OnboardingFragment : Fragment() {
         image = binding.imageOnboarding
         tvTitle.text = title
         tvDescription.text = description
+        image.setImageResource(imageResource)
         return view
     }
 
@@ -63,13 +64,13 @@ class OnboardingFragment : Fragment() {
         fun newInstance(
             title: String?,
             description: String?,
-            imageResource: Drawable
+            imageResource: Int
         ): OnboardingFragment {
             val fragment = OnboardingFragment()
             val args = Bundle()
             args.putString(ARG_PARAM1, title)
             args.putString(ARG_PARAM2, description)
-            args.putString(ARG_PARAM3, imageResource.toString())
+            args.putInt(ARG_PARAM3, imageResource)
             fragment.arguments = args
             return fragment
         }
