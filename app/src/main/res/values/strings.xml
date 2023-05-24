@@ -24,4 +24,5 @@
         <item>English</item>
     </string-array>
     <string name="selected_item">Selected item:</string>
+    <string name="let_s_you_in">Let\'s you in</string>
 </resources>

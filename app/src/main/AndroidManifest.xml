@@ -13,11 +13,12 @@
         android:theme="@style/AppTheme.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".OnboardingFinish"
+            android:name=".SignScreen"
             android:exported="false" />
         <activity
-            android:name=".OnboardingActivity"
-             />
+            android:name=".OnboardingFinish"
+            android:exported="false" />
+        <activity android:name=".OnboardingActivity" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".SplashScreen"
