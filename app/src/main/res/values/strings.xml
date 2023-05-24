@@ -20,8 +20,8 @@
     <string name="getting_started">Getting Started</string>
 
     <string-array name="Languages">
-        <item>English</item>
         <item>Indonesia</item>
+        <item>English</item>
     </string-array>
     <string name="selected_item">Selected item:</string>
 </resources>

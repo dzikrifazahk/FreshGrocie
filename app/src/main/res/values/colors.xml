@@ -14,6 +14,7 @@
     <color name="md_fc_greenligth">#98A354</color>
     <color name="md_fc_greendark">#455B2D</color>
     <color name="md_fc_background">#EBEAFA</color>
+    <color name="md_fc_gray">#989899</color>
     <color name="md_fc_yellow">#F9CC56</color>
     <!--reds-->
     <color name="md_red_50">#FFEBEE</color>

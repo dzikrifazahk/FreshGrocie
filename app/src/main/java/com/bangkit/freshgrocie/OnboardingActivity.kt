@@ -31,7 +31,6 @@ class OnboardingActivity : AppCompatActivity() {
         btnNext = binding.btnNextStep
         val languages = resources.getStringArray(R.array.Languages)
         val spinner = findViewById<Spinner>(R.id.spinner)
-        // access the spinner
         if (spinner != null) {
             val adapter = ArrayAdapter(this,
                 android.R.layout.simple_spinner_item, languages)
