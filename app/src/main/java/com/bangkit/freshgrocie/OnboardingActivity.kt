@@ -54,7 +54,9 @@ class OnboardingActivity : AppCompatActivity() {
             override fun onPageSelected(position: Int) {
                 if (position == 2) {
                     btnNext.text = getText(R.string.finish)
+                    btnBack.setVisibility(View.GONE);
                 } else {
+                    btnBack.setVisibility(View.VISIBLE);
                     btnNext.text = getText(R.string.next)
                 }
             }
