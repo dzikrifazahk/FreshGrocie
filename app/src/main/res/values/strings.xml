@@ -21,7 +21,7 @@
 
     <string-array name="Languages">
         <item>English</item>
-        <item>Bahasa Indonesia</item>
+        <item>Indonesia</item>
     </string-array>
     <string name="selected_item">Selected item:</string>
 </resources>
