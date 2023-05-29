@@ -3,7 +3,7 @@
 
     <string name="title_onboarding_1">Let\'s Find Market Nearest You</string>
     <string name="description_onboarding_1">Find the nearest vegetable and fruit market from your location</string>
-
+    
     <string name="title_onboarding_2">It\'s All Here</string>
     <string name="description_onboarding_2">You can find anything fresh fruit and vegetable what you want with FreshGroice</string>
 
@@ -27,4 +27,15 @@
     <string name="let_s_you_in">Let\'s you in</string>
     <string name="or">Or</string>
     <string name="continue_with_google">Continue with Google</string>
+
+
+
+    <string name="menuHome">Home</string>
+    <string name="menuDetection">Detect</string>
+    <string name="menuStore">Store</string>
+    <string name="menuChat">Chat</string>
+    <string name="menuProfile">Profile</string>
+
+
+    
 </resources>

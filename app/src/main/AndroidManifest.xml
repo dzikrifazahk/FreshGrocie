@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:targetApi="31">
+<!--        <activity-->
+<!--            android:name=".HomeActivity"-->
+<!--            android:exported="false" />-->
+        <activity
+            android:name=".dectection.CameraActivity"
+            android:exported="false" />
         <activity
             android:name=".SignScreen"
             android:exported="false" />
@@ -19,7 +25,7 @@
             android:name=".OnboardingFinish"
             android:exported="false" />
         <activity android:name=".OnboardingActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".HomeActivity" />
         <activity
             android:name=".SplashScreen"
             android:exported="true"
