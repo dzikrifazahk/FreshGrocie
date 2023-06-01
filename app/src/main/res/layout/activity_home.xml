@@ -13,55 +13,57 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/profile_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:src="@drawable/profile"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#FF000000"/>
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
 
 
-       <LinearLayout
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:orientation="vertical"
-           >
-           <TextView
-               android:id="@+id/tvName"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:textSize="10dp"
-               android:layout_weight="1"
-               android:paddingBottom="5dp"
-               android:text="TextView" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-           <TextView
-               android:id="@+id/tvSlogan"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_weight="1"
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="5dp"
+                android:text="TextView"
+                android:textSize="10dp" />
 
-               android:text="Let's Live healthy" />
+            <TextView
+                android:id="@+id/tvSlogan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
 
-       </LinearLayout>
+                android:text="Let's Live healthy" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="right">
+            android:gravity="right"
+            android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="15dp"
                 android:background="@android:color/transparent"
-                android:src="@drawable/notification"/>
+                android:paddingHorizontal="15dp"
+                android:src="@drawable/notification" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="wrap_content"
@@ -140,12 +142,13 @@
 <!--    </FrameLayout>-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:background="@drawable/rounded"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:background="@drawable/rounded"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/menu"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
