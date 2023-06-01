@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.PreferenceManager
 import androidx.viewpager2.widget.ViewPager2
 import com.bangkit.freshgrocie.databinding.ActivityOnboardingBinding
 import com.google.android.material.tabs.TabLayoutMediator
@@ -68,6 +69,10 @@ class OnboardingActivity : AppCompatActivity() {
 
         btnNext.setOnClickListener {
             if (getItem() > mViewPager.childCount) {
+                PreferenceManager.getDefaultSharedPreferences(this).edit().apply {
+                    putBoolean(OnboardingFragment.COMPLETED_ONBOARDING_PREF_NAME, true)
+                    apply()
+                }
                 finish()
             } else {
                 mViewPager.setCurrentItem(getItem() + 1, true)
@@ -76,6 +81,10 @@ class OnboardingActivity : AppCompatActivity() {
 
         btnBack.setOnClickListener {
             if (getItem() == 0) {
+                PreferenceManager.getDefaultSharedPreferences(this).edit().apply {
+                    putBoolean(OnboardingFragment.COMPLETED_ONBOARDING_PREF_NAME, true)
+                    apply()
+                }
                 finish()
             } else {
                 mViewPager.setCurrentItem(getItem() - 1, true)
