@@ -14,7 +14,9 @@ class HomeActivity : AppCompatActivity() {
                 startActivity(Intent(this@HomeActivity, OnboardingActivity::class.java))
             }
         }
-        startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
+        setContentView(R.layout.activity_home)
+//        startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
+//        startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
 
     }
 }
