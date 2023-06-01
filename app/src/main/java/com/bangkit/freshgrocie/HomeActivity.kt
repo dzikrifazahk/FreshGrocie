@@ -10,11 +10,11 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         PreferenceManager.getDefaultSharedPreferences(this).apply {
-            // Check if we need to display our OnboardingSupportFragment
             if (!getBoolean(OnboardingFragment.COMPLETED_ONBOARDING_PREF_NAME, false)) {
                 startActivity(Intent(this@HomeActivity, OnboardingActivity::class.java))
             }
         }
+        startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
 
     }
 }
