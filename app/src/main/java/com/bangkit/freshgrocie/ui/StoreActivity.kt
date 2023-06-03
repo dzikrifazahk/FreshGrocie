@@ -1,8 +1,9 @@
-package com.bangkit.freshgrocie
+package com.bangkit.freshgrocie.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.bangkit.freshgrocie.R
 import com.bangkit.freshgrocie.databinding.ActivityStoreBinding
 
 class StoreActivity : AppCompatActivity() {
