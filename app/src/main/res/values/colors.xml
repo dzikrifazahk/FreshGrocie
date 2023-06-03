@@ -17,6 +17,7 @@
     <color name="md_fc_background">#EBEAFA</color>
     <color name="md_fc_gray">#989899</color>
     <color name="md_fc_yellow">#F9CC56</color>
+    <color name="md_fc_graylight">#C5C5C7</color>
     <!--reds-->
     <color name="md_red_50">#FFEBEE</color>
     <color name="md_red_100">#FFCDD2</color>

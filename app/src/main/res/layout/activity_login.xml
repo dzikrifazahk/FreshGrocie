@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserRegister">
+    tools:context=".LoginActivity">
 
     <LinearLayout
         android:id="@+id/langlay"
-
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:gravity="right"
@@ -46,7 +45,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create your"
+            android:text="Login to your"
             android:textColor="@color/md_black_1000"
             android:textSize="42dp"
             android:textStyle="bold" />
@@ -70,24 +69,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tv_name"
-            android:layout_width="match_parent"
-            android:paddingHorizontal="8dp"
-            app:startIconDrawable="@drawable/baseline_person_24"
-            app:startIconContentDescription="name"
-            app:boxStrokeWidth="20dp"
-            app:boxStrokeColor="@color/md_black_1000"
-            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.SmallComponent"
-            android:layout_height="wrap_content"
-            android:hint="@string/name">
-            <com.google.android.material.textfield.TextInputEditText
-                android:background="@color/md_fc_graylight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tv_email"
+            android:id="@+id/tv_email_in"
             android:layout_width="match_parent"
             android:paddingHorizontal="8dp"
             app:boxStrokeWidth="20dp"
@@ -97,14 +79,14 @@
             app:startIconContentDescription="name"
             android:layout_height="wrap_content"
             android:hint="@string/email">
-        <com.google.android.material.textfield.TextInputEditText
-            android:background="@color/md_fc_graylight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            <com.google.android.material.textfield.TextInputEditText
+                android:background="@color/md_fc_graylight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tv_password"
+            android:id="@+id/tv_password_in"
             android:layout_width="match_parent"
             android:paddingHorizontal="8dp"
             app:boxStrokeWidth="20dp"
@@ -122,8 +104,21 @@
                 android:background="@color/md_fc_graylight"
                 />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/remember_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remember me" />
+        </LinearLayout>
+
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btb_signpassword"
+            android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -178,7 +173,7 @@
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sign_in"/>
+                android:text="Sign Up"/>
         </LinearLayout>
     </LinearLayout>
 
