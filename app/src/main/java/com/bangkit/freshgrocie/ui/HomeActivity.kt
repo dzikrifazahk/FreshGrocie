@@ -16,7 +16,7 @@ class HomeActivity : AppCompatActivity() {
 //                startActivity(Intent(this@HomeActivity, StoreActivity::class.java))
 //            }
 //        }
-        setContentView(R.layout.activity_store)
+        setContentView(R.layout.activity_user_register)
 //        startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
 //        startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
 

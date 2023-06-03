@@ -55,7 +55,7 @@
             app:tabIndicatorHeight="0dp"
             app:tabBackground="@drawable/onboarding_viewpager_selector_orange"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_previous_step"
             android:layout_width="match_parent"
             android:layout_height="45dp"
@@ -73,7 +73,7 @@
             />
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_next_step"
             android:layout_width="match_parent"
             android:layout_height="45dp"
