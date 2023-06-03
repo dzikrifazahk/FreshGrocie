@@ -1,8 +1,7 @@
-package com.bangkit.freshgrocie
+package com.bangkit.freshgrocie.ui
 
 import android.os.Bundle
 import android.view.View
-import android.widget.AbsSpinner
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -11,6 +10,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import androidx.viewpager2.widget.ViewPager2
+import com.bangkit.freshgrocie.OnboardingAdapter
+import com.bangkit.freshgrocie.fragment.OnboardingFragment
+import com.bangkit.freshgrocie.R
 import com.bangkit.freshgrocie.databinding.ActivityOnboardingBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -20,6 +22,7 @@ class OnboardingActivity : AppCompatActivity() {
     private lateinit var btnBack: Button
     private lateinit var btnNext: Button
     private lateinit var binding: ActivityOnboardingBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOnboardingBinding.inflate(layoutInflater)

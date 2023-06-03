@@ -1,7 +1,8 @@
-package com.bangkit.freshgrocie
+package com.bangkit.freshgrocie.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bangkit.freshgrocie.R
 
 class UserRegister : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

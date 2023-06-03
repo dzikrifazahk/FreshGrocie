@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,37 +10,41 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_fc_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar"
+        android:theme="@style/Theme.fresgrocie"
         tools:targetApi="31">
+
         <activity
-            android:name=".Getting_StartedActivity"
+            android:name=".StoreActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.Getting_StartedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.LoginActivity"
             android:exported="false"
-            android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme.fresgrocie"
+            android:label="@string/title_activity_login"/>
         <activity
-            android:name=".UserRegister"
+            android:name=".ui.UserRegister"
             android:exported="false" />
         <activity
-            android:name=".WebAssistantAuthActivity"
+            android:name=".ui.WebAssistantAuthActivity"
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".HomeActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".dectection.CameraActivity"
+            android:name=".ui.CameraActivity"
             android:exported="false" />
         <activity
-            android:name=".SignScreen"
+            android:name=".ui.SignScreen"
             android:exported="false" />
         <activity
-            android:name=".OnboardingFinish"
+            android:name=".ui.OnboardingFinish"
             android:exported="false" />
-        <activity android:name=".OnboardingActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".ui.OnboardingActivity" />
+        <activity android:name=".ui.HomeActivity" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".ui.SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>

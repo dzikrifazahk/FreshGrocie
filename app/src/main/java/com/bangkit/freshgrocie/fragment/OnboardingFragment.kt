@@ -1,6 +1,5 @@
-package com.bangkit.freshgrocie
+package com.bangkit.freshgrocie.fragment
 
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
-import com.airbnb.lottie.LottieAnimationView
 import com.bangkit.freshgrocie.databinding.FragmentOnboardingBinding
 
 

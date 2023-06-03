@@ -1,4 +1,4 @@
-package com.bangkit.freshgrocie
+package com.bangkit.freshgrocie.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.preference.PreferenceManager
 import com.bangkit.freshgrocie.databinding.ActivityOnboardingFinishBinding
+import com.bangkit.freshgrocie.fragment.OnboardingFragment
 
 class OnboardingFinish : AppCompatActivity() {
     private lateinit var btnStart: LinearLayout
@@ -22,9 +23,8 @@ class OnboardingFinish : AppCompatActivity() {
                 putBoolean(OnboardingFragment.COMPLETED_ONBOARDING_PREF_NAME, true)
                 apply()
             }
-            finish()
             startActivity(Intent(this@OnboardingFinish, HomeActivity::class.java))
-
+            finish()
         }
     }
 }

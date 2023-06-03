@@ -30,6 +30,7 @@
 
 
     <string name="menuHome">Home</string>
+    <string name="searchbar_hint">Masukkan Toko</string>
     <string name="menuDetection">Detect</string>
     <string name="menuStore">Store</string>
     <string name="menuChat">Chat</string>
@@ -85,6 +86,8 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="full_name">Full Name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
