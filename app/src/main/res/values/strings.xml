@@ -23,6 +23,10 @@
         <item>Indonesia</item>
         <item>English</item>
     </string-array>
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
     <string name="selected_item">Selected item:</string>
     <string name="let_s_you_in">Let\'s you in</string>
     <string name="or">Or</string>
@@ -88,6 +92,8 @@
     <string name="full_name">Full Name</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="store">Store</string>
 
 
 </resources>
