@@ -3,28 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/item1"
+        android:id="@+id/itemHome"
         android:title="@string/menuHome"
-        android:icon="@drawable/home"/>
+        android:icon="@drawable/home"
+        app:cnb_iconColor="@color/md_white_1000"
+        app:cnb_textColor="@color/md_white_1000"/>
 
     <item
-        android:id="@+id/item2"
+        android:id="@+id/itemDetect"
         android:title="@string/menuDetection"
-        android:icon="@drawable/detection"/>
+        android:icon="@drawable/detection"
+        app:cnb_iconColor="@color/md_white_1000"
+        app:cnb_textColor="@color/md_white_1000"/>
 
     <item
-        android:id="@+id/item3"
+        android:id="@+id/itemStore"
         android:title="@string/menuStore"
-        android:icon="@drawable/store"/>
+        android:icon="@drawable/store"
+        app:cnb_iconColor="@color/md_white_1000"
+        app:cnb_textColor="@color/md_white_1000"/>
 
     <item
-        android:id="@+id/item4"
+        android:id="@+id/itemChat"
         android:title="@string/menuChat"
-        android:icon="@drawable/chat"/>
+        android:icon="@drawable/chat"
+        app:cnb_iconColor="@color/md_white_1000"
+        app:cnb_textColor="@color/md_white_1000"/>
 
     <item
-        android:id="@+id/item5"
+        android:id="@+id/itemProfile"
         android:title="@string/menuProfile"
+        app:cnb_iconColor="@color/md_white_1000"
+        app:cnb_textColor="@color/md_white_1000"
         android:icon="@drawable/profile"/>
 
 </menu>
