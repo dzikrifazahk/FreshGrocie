@@ -49,6 +49,8 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="previous">Previous</string>
     <string name="gretings">Hello, </string>
+    <string name="textKeep">Keep Healthy</string>
+    <string name="textCardView">Congratulations, you are connected, lets see Nearest location</string>
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus

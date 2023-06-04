@@ -14,9 +14,6 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".ui.StoreActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.Getting_StartedActivity"
             android:exported="false" />
         <activity
@@ -29,9 +26,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.WebAssistantAuthActivity"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".HomeActivity" -->
-        <!-- android:exported="false" /> -->
+            android:exported="false" />
         <activity
             android:name=".ui.CameraActivity"
             android:exported="false" />
