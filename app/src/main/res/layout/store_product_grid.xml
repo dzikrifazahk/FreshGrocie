@@ -6,12 +6,12 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_margin="5dp"
-    app:cardCornerRadius="5dp"
-    app:cardElevation="5dp">
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp">
 
     <!--on below line we are creating
         a linear layout for grid view item-->
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -20,26 +20,41 @@
             a simple image view-->
         <ImageView
             android:id="@+id/idIVCourse"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_height="100dp"
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:padding="4dp"
             android:src="@mipmap/ic_launcher" />
-
-        <!--on below line we are creating
-            a simple text view-->
-        <TextView
-            android:id="@+id/idTVCourse"
+        <LinearLayout
+            android:background="@drawable/grid_title_corner"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="8dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:padding="4dp"
-            android:text="@string/app_name"
-            android:textAlignment="center"
-            android:textColor="@color/md_black_1000" />
+            android:layout_alignEnd="@id/idIVCourse"
+            android:layout_alignBottom="@id/idIVCourse"
+            android:orientation="vertical">
+            <TextView
+                android:paddingHorizontal="4dp"
+                android:id="@+id/idTVCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="15dp"
+                android:fontFamily="@font/urbanist_black"
+                android:textColor="@color/md_black_1000" />
+            <TextView
+                android:paddingHorizontal="4dp"
+                android:id="@+id/idTvStoreName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist"
+                android:text="@string/app_name"
+                android:textColor="@color/md_black_1000" />
+        </LinearLayout>
 
-    </LinearLayout>
+
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

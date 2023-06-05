@@ -49,12 +49,12 @@ internal class GVStoreProductAdapter (
         if (convertView == null) {
             // on below line we are passing the layout file
             // which we have to inflate for each item of grid view.
-            convertView = layoutInflater!!.inflate(R.layout.store_product_grid, null)
+            convertView = layoutInflater!!.inflate(R.layout.item_product, null)
         }
         // on below line we are initializing our course image view
         // and course text view with their ids.
-        courseIV = convertView!!.findViewById(R.id.idIVCourse)
-        courseTV = convertView!!.findViewById(R.id.idTVCourse)
+        courseIV = convertView!!.findViewById(R.id.pruduct_image)
+        courseTV = convertView!!.findViewById(R.id.name_product)
         // on below line we are setting image for our course image view.
         courseIV.setImageResource(courseList.get(position).courseImg)
         // on below line we are setting text in our course text view.

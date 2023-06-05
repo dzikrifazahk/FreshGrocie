@@ -50,8 +50,8 @@
             app:sliderIndicatorOrientation="horizontal"
             app:sliderIndicatorPadding="3dp"
             app:sliderIndicatorRadius="2dp"
-            app:sliderIndicatorSelectedColor="#5A5A5A"
-            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderIndicatorSelectedColor="@color/md_fc_greenligth"
+            app:sliderIndicatorUnselectedColor="@color/md_fc_graylight"
             app:sliderScrollTimeInSec="1" />
     </RelativeLayout>
     <RelativeLayout
@@ -127,7 +127,7 @@
                 android:id="@+id/store_intro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,. Read more..."/>
+                android:text="@string/desc"/>
         </LinearLayout>
         <LinearLayout
             android:layout_below="@+id/store_info"
@@ -141,8 +141,6 @@
                 android:numColumns="2"
                 android:verticalSpacing="6dp" />
         </LinearLayout>
-
-
 
 
     </RelativeLayout>

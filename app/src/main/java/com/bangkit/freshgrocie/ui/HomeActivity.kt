@@ -30,13 +30,13 @@ class HomeActivity : AppCompatActivity() {
 ////            }
 ////        }
 //
-//        setContentView(R.layout.activity_getting_started)
+//     setContentView(R.layout.activity_home)
 //
 ////        startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
 ////        startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
-//        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, HomeFragment() ).commit()
-//        setupBottomNavigation()
-        startActivity(Intent(this@HomeActivity, StoreDetailActivity::class.java))
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, HomeFragment() ).commit()
+        setupBottomNavigation()
+//        startActivity(Intent(this@HomeActivity, StoreDetailActivity::class.java))
     }
 
      fun setupBottomNavigation(){

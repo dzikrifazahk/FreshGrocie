@@ -54,11 +54,11 @@ class StoreDetailActivity : AppCompatActivity() {
         //----------------------------------- GridView Product
         courseGRV = findViewById(R.id.store_product)
         courseList = ArrayList<GVStoreProduct>()
-        courseList = courseList + GVStoreProduct("C++", R.drawable.store)
-        courseList = courseList + GVStoreProduct("Java", R.drawable.chat)
-        courseList = courseList + GVStoreProduct("Android", R.drawable.save)
-        courseList = courseList + GVStoreProduct("Python", R.drawable.baseline_lock_24)
-        courseList = courseList + GVStoreProduct("Javascript", R.drawable.ic_fb)
+        courseList = courseList + GVStoreProduct("C++", R.drawable.apple_season)
+        courseList = courseList + GVStoreProduct("Java", R.drawable.apple_season)
+        courseList = courseList + GVStoreProduct("Android", R.drawable.apple_season)
+        courseList = courseList + GVStoreProduct("Python", R.drawable.apple_season)
+        courseList = courseList + GVStoreProduct("Javascript", R.drawable.apple_season)
         val courseAdapter = GVStoreProductAdapter(courseList = courseList, this@StoreDetailActivity)
         courseGRV.adapter = courseAdapter
         courseGRV.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
