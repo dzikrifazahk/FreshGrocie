@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.bangkit.freshgrocie.R
 import com.bangkit.freshgrocie.databinding.ActivityHomeBinding
 import com.bangkit.freshgrocie.fragment.HomeFragment
+import com.bangkit.freshgrocie.fragment.ProfileFragment
 import com.bangkit.freshgrocie.fragment.StoreFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -54,6 +55,10 @@ class HomeActivity : AppCompatActivity() {
                 }
                 R.id.itemStore -> {
                     val fragment = StoreFragment()
+                    openFragment(fragment)
+                }
+                R.id.itemProfile -> {
+                    val fragment = ProfileFragment()
                     openFragment(fragment)
                 }
             }
