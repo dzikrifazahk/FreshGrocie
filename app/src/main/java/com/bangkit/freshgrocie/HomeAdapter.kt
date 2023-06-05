@@ -10,6 +10,7 @@ import com.bangkit.freshgrocie.database.response.ResponseProductItem
 import com.bangkit.freshgrocie.databinding.ItemCarouselBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.material.carousel.MaskableFrameLayout
 
 
 class HomeAdapter(private val listproduct: List<ResponseProductItem>) :
@@ -20,6 +21,7 @@ class HomeAdapter(private val listproduct: List<ResponseProductItem>) :
     fun setOnItemClickCallback(callback: OnItemClickCallback) {
         onItemClickCallback = callback
     }
+
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemCarouselBinding.inflate(LayoutInflater.from(viewGroup.context),viewGroup, false)
@@ -32,6 +34,7 @@ class HomeAdapter(private val listproduct: List<ResponseProductItem>) :
         {
            viewHolder.bind(product)
         }
+
 //        viewHolder.titleTextView.text = product.productName
 ////        viewHolder.typeUser.text = user.type
 //        Glide.with(viewHolder.avatarImageView.context)

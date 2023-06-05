@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item>
         <shape  android:shape="rectangle">
             <solid android:color="#d8d8d8" />
-            <corners android:topRightRadius="45dp"
-                android:topLeftRadius="45dp"/>
-
-
+            <corners android:topRightRadius="15dp"
+                android:topLeftRadius="15dp"/>
         </shape>
 
     </item>
@@ -15,13 +14,14 @@
         <shape  android:shape="rectangle">
 
             <solid android:color="#ffff" />
-            <corners android:topRightRadius="45dp"
-                android:topLeftRadius="45dp"/>
+            <corners android:topRightRadius="15dp"
+                android:topLeftRadius="15dp"/>
 
         </shape>
     </item>
 
     <!-- White Top color -->
+
 
 
 

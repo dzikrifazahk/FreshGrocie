@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.ProfileFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/profile_menu"
+            app:navigationIcon="@drawable/back_icon_black">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/urbanist"
+                android:text="Toolbar Title"
+                android:textSize="17dp" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:padding="15dp"
+            android:src="@drawable/dummyimage"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_black"
+            android:text="@string/full_name"
+            android:textSize="23dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/urbanist_black"
+            android:text="@string/email"
+            android:textSize="15dp" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="350dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:alpha="0.5"
+            android:background="#B6B6B6" />/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="?attr/selectableItemBackground"
+        android:minHeight="?attr/minTouchTargetSize"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_margin="15dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/nameImageView"
+                android:src="@drawable/profile"/>
+
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_toEndOf="@+id/nameImageView"
+                android:layout_toRightOf="@id/nameImageView"
+                android:gravity="center_vertical"
+                android:text="Name" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/nameImageView2"
+                android:src="@drawable/dummyimage"/>
+
+            <TextView
+                android:id="@+id/nameTextView2"
+                android:padding="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_toEndOf="@+id/nameImageView2"
+                android:layout_toRightOf="@id/nameImageView2"
+                android:gravity="center_vertical"
+                android:text="Name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_margin="15dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/nameImageView3"
+                android:src="@drawable/profile"/>
+
+            <TextView
+                android:id="@+id/nameTextView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_toEndOf="@+id/nameImageView"
+                android:layout_toRightOf="@id/nameImageView"
+                android:gravity="center_vertical"
+                android:text="Name" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/nameImageView4"
+                android:src="@drawable/profile"/>
+
+            <TextView
+                android:id="@+id/nameTextView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_toEndOf="@+id/nameImageView"
+                android:layout_toRightOf="@id/nameImageView"
+                android:gravity="center_vertical"
+                android:text="Name" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/nameImageView5"
+                android:src="@drawable/dark_theme_icon"/>
+
+            <TextView
+                android:id="@+id/nameTextView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_toEndOf="@+id/nameImageView"
+                android:layout_toRightOf="@id/nameImageView"
+                android:gravity="center_vertical"
+                android:text="Name" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchDarkMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:gravity="center"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/nameImageView6"
+                android:src="@drawable/logout_icon"/>
+
+            <TextView
+                android:id="@+id/nameTextView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:fontFamily="@font/urbanist"
+                android:layout_marginEnd="0dp"
+                android:layout_toEndOf="@+id/nameImageView"
+                android:layout_toRightOf="@id/nameImageView"
+                android:gravity="center_vertical"
+                android:text="Logout" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
