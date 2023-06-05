@@ -60,12 +60,14 @@
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:layout_width="wrap_content"
+                    android:id="@+id/id_home_notification"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:paddingHorizontal="15dp"
                     android:src="@drawable/notification" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/id_home_chart"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@android:color/transparent"

@@ -2,6 +2,8 @@ package com.bangkit.freshgrocie.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
@@ -14,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding : ActivityHomeBinding
+    private lateinit var ChartButtonHome : ImageButton
     private lateinit var bottomNavigation : BottomNavigationView
 
 
@@ -21,6 +24,9 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
 //        setContentView(R.layout.activity_home)
+        ChartButtonHome.setOnClickListener{
+
+        }
         setContentView(binding.root)
 
 //        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
@@ -60,3 +66,5 @@ class HomeActivity : AppCompatActivity() {
             .commit()
     }
 }
+
+
