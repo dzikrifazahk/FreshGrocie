@@ -46,14 +46,16 @@
             android:id="@+id/pageIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:layout_margin="10dp"
-            app:tabGravity="center"
+            android:layout_centerInParent="true"
 
-            app:tabIndicatorHeight="0dp"
-            app:tabBackground="@drawable/onboarding_viewpager_selector_orange"/>
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:tabBackground="@drawable/onboarding_viewpager_selector_orange"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_previous_step"

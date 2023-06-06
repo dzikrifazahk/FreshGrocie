@@ -106,7 +106,7 @@
                 app:cardPreventCornerOverlap="false"
                 >
 
-                <LinearLayout
+                <RelativeLayout
                     android:id="@+id/linearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -117,30 +117,33 @@
 
                     <TextView
                         style="@style/Title.Normal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/title_home_green"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
                         android:textColor="@color/md_white_1000"
-                        android:paddingBottom="3dp"
                         android:text="@string/textCardView" />
 
                     <TextView
+                        android:id="@+id/sub_home"
+                        android:layout_below="@id/title_home_green"
                         style="@style/Subtitle.Normal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
                         android:paddingBottom="3dp"
                         android:textColor="@color/md_white_1000"
                         android:text="@string/textKeep" />
 
                     <Button
+                        android:layout_below="@id/sub_home"
                         style="@style/Widget.Material3.Button.ElevatedButton"
                         android:id="@+id/elevatedButton"
                         android:textStyle="bold"
                         android:textSize="12dp"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="35dp"
                         android:text="Click Here"/>
 
-                </LinearLayout>
+                </RelativeLayout>
 
 
             </androidx.cardview.widget.CardView>
@@ -187,12 +190,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
     </com.google.android.material.search.SearchView>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/recomendation_shop_home"
+        android:layout_width="match_parent"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="30dp"
+        android:drawableLeft="@drawable/location"
+        android:layout_height="60dp"
+        android:text="Find Your Location"
+        app:layout_constraintTop_toBottomOf="@id/searchBar"/>
+    <TextView
 
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Halo"/>-->
+        style="@style/Title.Normal"
+        android:id="@+id/title_home_row1"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_height="30dp"
+        android:text="Recommended Store"
+        app:layout_constraintTop_toBottomOf="@id/recomendation_shop_home"/>
     <LinearLayout
+        android:id="@+id/recomendation_store"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
@@ -200,7 +217,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchBar">
+        app:layout_constraintTop_toBottomOf="@+id/title_home_row1">
 
         <com.google.android.material.carousel.MaskableFrameLayout
             android:id="@+id/carousel_item_container"
@@ -210,7 +227,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+            app:layout_constraintTop_toBottomOf="@+id/title_home_row1"
             android:foreground="?attr/selectableItemBackground"
             app:layout_constraintVertical_bias="0.06999999"
             app:shapeAppearance="?attr/shapeAppearanceCornerExtraLarge">
@@ -227,7 +244,50 @@
         </com.google.android.material.carousel.MaskableFrameLayout>
 
     </LinearLayout>
+    <TextView
+        style="@style/Subtitle.Normal"
+        android:id="@+id/title_home_row2"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_height="30dp"
+        android:text="Recommended Store"
+        app:layout_constraintTop_toBottomOf="@id/recomendation_store"/>
+    <LinearLayout
+        android:id="@+id/recomendation_store2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_home_row2">
 
+        <com.google.android.material.carousel.MaskableFrameLayout
+            android:id="@+id/carousel_item_container2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_home_row1"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_constraintVertical_bias="0.06999999"
+            app:shapeAppearance="?attr/shapeAppearanceCornerExtraLarge">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/carousel_recycler_view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:scrollbars="horizontal"
+                tools:listitem="@layout/item_carousel" />
+        </com.google.android.material.carousel.MaskableFrameLayout>
+
+    </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
