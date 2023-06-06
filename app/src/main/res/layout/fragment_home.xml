@@ -116,20 +116,19 @@
                     android:orientation="vertical">
 
                     <TextView
+                        style="@style/Title.Normal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/urbanist_black"
                         android:textColor="@color/md_white_1000"
-                        android:textSize="15dp"
                         android:paddingBottom="3dp"
                         android:text="@string/textCardView" />
 
                     <TextView
+                        style="@style/Subtitle.Normal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/urbanist"
+                        android:paddingBottom="3dp"
                         android:textColor="@color/md_white_1000"
-                        android:textSize="15dp"
                         android:text="@string/textKeep" />
 
                     <Button

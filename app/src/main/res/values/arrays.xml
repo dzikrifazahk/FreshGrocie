@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="autosize_title_text_sizes">
+        <item>10sp</item>
+        <item>14sp</item>
+        <item>18sp</item>
+        <item>26sp</item>
+        <item>30sp</item>
+    </array>
+    <array name="autosize_titlebig_text_sizes">
+        <item>14sp</item>
+        <item>18sp</item>
+        <item>22sp</item>
+        <item>28sp</item>
+        <item>32sp</item>
+    </array>
+    <array name="autosize_subtitle_text_sizes">
+        <item>8sp</item>
+        <item>10sp</item>
+        <item>14sp</item>
+        <item>20sp</item>
+        <item>25sp</item>
+    </array>
+    <array name="autosize_desc_text_sizes">
+        <item>8sp</item>
+        <item>10sp</item>
+        <item>12sp</item>
+        <item>18sp</item>
+        <item>20sp</item>
+    </array>
+</resources>

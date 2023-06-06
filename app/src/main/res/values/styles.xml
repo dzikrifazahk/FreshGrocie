@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //=================== Text Styling ==============================================
+
+    //=================== Title Styling ==============================================
+    <style name="Title" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/urbanist_black</item>
+        <item name="autoSizeTextType">uniform</item>
+    </style>
+    <style name="Title.Normal" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/urbanist_black</item>
+        <item name="autoSizePresetSizes">@array/autosize_title_text_sizes</item>
+    </style>
+    <style name="Title.Big" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/urbanist_black</item>
+        <item name="autoSizePresetSizes">@array/autosize_titlebig_text_sizes</item>
+    </style>
+    //===================== Subtitle ==============================================
+    <style name="Subtitle" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/urbanist</item>
+        <item name="autoSizeTextType">uniform</item>
+    </style>
+    <style name="Subtitle.Normal" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/urbanist</item>
+        <item name="autoSizePresetSizes">@array/autosize_subtitle_text_sizes</item>
+    </style>
+    <style name="Subtitle.Big" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/urbanist</item>
+        <item name="autoSizePresetSizes">@array/autosize_title_text_sizes</item>
+    </style>
+    //===================== Description ==============================================
+    <style name="Description" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/urbanist</item>
+        <item name="autoSizeTextType">uniform</item>
+    </style>
+    <style name="Description.Normal" parent="TextAppearance.AppCompat">
+        <item name="autoSizePresetSizes">@array/autosize_desc_text_sizes</item>
+    </style>
+    <style name="Description.Big" parent="TextAppearance.AppCompat">
+        <item name="autoSizePresetSizes">@array/autosize_subtitle_text_sizes</item>
+    </style>
+</resources>
