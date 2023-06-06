@@ -122,6 +122,7 @@
                     android:gravity="center_vertical"
                     android:text="Edit User" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_marginBottom="10dp"
@@ -216,8 +217,8 @@
                     android:src="@drawable/dark_theme_icon"/>
 
                 <TextView
-                    android:id="@+id/nameTextView5"
-                    android:layout_width="match_parent"
+                    android:id="@+id/tvDarkTheme"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:textSize="15dp"
@@ -229,6 +230,21 @@
                     android:layout_toRightOf="@id/nameImageView"
                     android:gravity="center_vertical"
                     android:text="Dark Theme" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchDarkMode"
+                        android:layout_gravity="right"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        />
+                </LinearLayout>
+
 
                 <!--            <com.google.android.material.switchmaterial.SwitchMaterial-->
                 <!--                android:id="@+id/switchDarkMode"-->

@@ -43,14 +43,6 @@ class StoreDetailActivity : AppCompatActivity() {
 
         //----------------------------------- Rating Bar
         val rBar = findViewById<RatingBar>(R.id.ratingbarstore)
-        if (rBar != null) {
-            val button = findViewById<Button>(R.id.button)
-            button?.setOnClickListener {
-                val msg = rBar.rating.toString()
-                Toast.makeText(this@StoreDetailActivity,
-                    "Rating is: "+msg, Toast.LENGTH_SHORT).show()
-            }
-        }
         //----------------------------------- GridView Product
         courseGRV = findViewById(R.id.store_product)
         courseList = ArrayList<GVStoreProduct>()

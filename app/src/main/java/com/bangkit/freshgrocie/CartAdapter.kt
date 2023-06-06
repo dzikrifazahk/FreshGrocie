@@ -51,7 +51,7 @@ internal class CartAdapter (
         if (convertView == null) {
             // on below line we are passing the layout file
             // which we have to inflate for each item of grid view.
-            convertView = layoutInflater!!.inflate(R.layout.chart_item, null)
+            convertView = layoutInflater!!.inflate(R.layout.item_chart, null)
         }
         // on below line we are initializing our course image view
         // and course text view with their ids.

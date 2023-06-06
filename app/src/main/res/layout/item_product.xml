@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:alpha="0.9"
             android:scaleType="centerCrop"
-            android:src="@drawable/tesstore" />
+            android:src="@drawable/apple_season" />
 
         <LinearLayout
             android:layout_width="wrap_content"
