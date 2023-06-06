@@ -5,36 +5,32 @@
     <item
         android:id="@+id/itemHome"
         android:title="@string/menuHome"
-        android:icon="@drawable/home"
-        app:cnb_iconColor="@color/md_white_1000"
-        app:cnb_textColor="@color/md_white_1000"/>
+        android:enabled="true"
+        android:icon="@drawable/home"/>
 
     <item
         android:id="@+id/itemDetect"
         android:title="@string/menuDetection"
+        android:enabled="true"
         android:icon="@drawable/detection"
-        app:cnb_iconColor="@color/md_white_1000"
-        app:cnb_textColor="@color/md_white_1000"/>
+        />
 
     <item
         android:id="@+id/itemStore"
         android:title="@string/menuStore"
-        android:icon="@drawable/store_icon"
-        app:cnb_iconColor="@color/md_white_1000"
-        app:cnb_textColor="@color/md_white_1000"/>
+        android:enabled="true"
+        android:icon="@drawable/store_icon"/>
 
     <item
         android:id="@+id/itemChat"
         android:title="@string/menuChat"
-        android:icon="@drawable/chat"
-        app:cnb_iconColor="@color/md_white_1000"
-        app:cnb_textColor="@color/md_white_1000"/>
+        android:enabled="true"
+        android:icon="@drawable/chat"/>
 
     <item
         android:id="@+id/itemProfile"
         android:title="@string/menuProfile"
-        app:cnb_iconColor="@color/md_white_1000"
-        app:cnb_textColor="@color/md_white_1000"
+        android:enabled="true"
         android:icon="@drawable/profile"/>
 
 </menu>

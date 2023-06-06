@@ -24,7 +24,7 @@ class HomeActivity : AppCompatActivity() {
     }
     fun setupBottomNavigation(){
         binding.bottomNavigation.setOnItemSelectedListener { it ->
-            when (it) {
+            when (it.itemId) {
                 R.id.itemHome -> {
                     val fragment = HomeFragment()
                     openFragment(fragment)

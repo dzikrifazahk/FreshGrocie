@@ -5,12 +5,14 @@
     android:id="@+id/frame_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="bottom"
     tools:context=".ui.HomeActivity">
 
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:background="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,24 +20,17 @@
         app:layout_constraintTop_toTopOf="parent">
 
     </FrameLayout>
-    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:cnb_addBottomInset="false"
-        app:cnb_addLeftInset="false"
-        app:cnb_addRightInset="false"
-        app:cnb_addTopInset="false"
-        app:cnb_animationDuration="175"
-        app:cnb_iconSize="24dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:background="@drawable/rounded"
-        app:cnb_menuResource="@menu/menu"
-        app:cnb_orientationMode="horizontal"
-        app:cnb_radius="10dp"
-        app:cnb_textAppearance="@color/colorPrimary"
-        app:cnb_unselectedColor="#DFFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu" />
 
     <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
     <!--        android:layout_width="match_parent"-->
