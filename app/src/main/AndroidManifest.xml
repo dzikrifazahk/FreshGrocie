@@ -42,13 +42,13 @@
             android:name=".ui.CameraActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SignScreen"
+            android:name=".ui.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".ui.OnboardingFinish"
             android:exported="false" />
         <activity android:name=".ui.OnboardingActivity" />
-        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.SignScreenActivity" />
         <activity
             android:name=".ui.SplashScreen"
             android:exported="true"

@@ -23,7 +23,7 @@ class OnboardingFinish : AppCompatActivity() {
                 putBoolean(OnboardingFragment.COMPLETED_ONBOARDING_PREF_NAME, true)
                 apply()
             }
-            startActivity(Intent(this@OnboardingFinish, HomeActivity::class.java))
+            startActivity(Intent(this@OnboardingFinish, SignScreenActivity::class.java))
             finish()
         }
     }

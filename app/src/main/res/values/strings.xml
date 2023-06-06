@@ -103,6 +103,7 @@
     <string name="text_on_going">On Going</string>
     <string name="text_compeleted">Completed</string>
     <string name="text_canceled">Canceled</string>
+    <string name="your_web_client_id">1001</string>
 
 
 </resources>

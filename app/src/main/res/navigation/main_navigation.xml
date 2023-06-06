@@ -7,7 +7,7 @@
 
     <activity
         android:id="@+id/homeActivity"
-        android:name="com.bangkit.freshgrocie.ui.HomeActivity"
+        android:name="com.bangkit.freshgrocie.ui.SignScreenActivity"
         android:label="activity_home"
         tools:layout="@layout/activity_home" />
     <activity
@@ -17,7 +17,7 @@
         tools:layout="@layout/activity_web_assistant_auth" />
     <activity
         android:id="@+id/signScreen"
-        android:name="com.bangkit.freshgrocie.ui.SignScreen"
+        android:name="com.bangkit.freshgrocie.ui.HomeActivity"
         android:label="activity_sign_screen"
         tools:layout="@layout/activity_sign_screen" />
 </navigation>

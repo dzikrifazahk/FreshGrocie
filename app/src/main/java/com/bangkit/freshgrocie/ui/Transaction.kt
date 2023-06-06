@@ -2,6 +2,7 @@ package com.bangkit.freshgrocie.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.viewpager2.widget.ViewPager2
 import com.bangkit.freshgrocie.R
@@ -17,6 +18,12 @@ class Transaction : AppCompatActivity() {
             R.string.tab2,
             R.string.tab3
         )
+        @DrawableRes
+        private val TAB_ICON = intArrayOf(
+            R.drawable.on_going_icon,
+            R.drawable.compeleted_icon,
+            R.drawable.canceled_icon
+        )
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +32,8 @@ class Transaction : AppCompatActivity() {
         val viewPager: ViewPager2 = findViewById(R.id.transcation_view_layout)
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabT_layout)
-        TabLayoutMediator(tabs, viewPager) { tab, position ->
-            tab.text = resources.getString(TAB_TITLES[position])
+        TabLayoutMediator(tabs, viewPager) { tab, position->
+            tab.text = resources.getString(TAB_TITLES[position], TAB_ICON[position])
         }.attach()
     }
 }

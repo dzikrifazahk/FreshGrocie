@@ -23,12 +23,12 @@
         android:textSize="20dp"
         android:fontFamily="@font/urbanist_black"/>
     </LinearLayout>
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabT_layout"
-        android:layout_below="@id/appbarT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </com.google.android.material.tabs.TabLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabT_layout"
+            android:layout_below="@id/appbarT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.google.android.material.tabs.TabLayout>
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/transcation_view_layout"
         android:layout_width="match_parent"

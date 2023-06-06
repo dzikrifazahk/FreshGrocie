@@ -1,72 +1,26 @@
 package com.bangkit.freshgrocie.ui
 
-import android.content.Intent
-import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
+import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.bangkit.freshgrocie.R
 import com.bangkit.freshgrocie.databinding.ActivityHomeBinding
-import com.bangkit.freshgrocie.databinding.ActivitySignScreenBinding
 import com.bangkit.freshgrocie.fragment.HomeFragment
 import com.bangkit.freshgrocie.fragment.ProfileFragment
 import com.bangkit.freshgrocie.fragment.StoreFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
-
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding : ActivityHomeBinding
-    private lateinit var bindingSignScreen : ActivitySignScreenBinding
-    private lateinit var ChartButtonHome : ImageButton
-    private lateinit var bottomNavigation : BottomNavigationView
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-<<<<<<< Updated upstream
-//        bindingSignScreen = ActivitySignScreenBinding.inflate(layoutInflater)
-=======
-   //     binding = ActivityHomeBinding.inflate(layoutInflater)
->>>>>>> Stashed changes
-//        setContentView(R.layout.activity_home)
-//        ChartButtonHome.setOnClickListener{
-//
-//        }
-<<<<<<< Updated upstream
-//        setContentView(bindingSignScreen.root)
+        setContentView(R.layout.activity_sign_screen)
 
-=======
-    //    setContentView(binding.root)
->>>>>>> Stashed changes
-//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-//        PreferenceManager.getDefaultSharedPreferences(this).apply {
-//            if (!getBoolean(OnboardingFragment.COMPLETED_ONBOARDING_PREF_NAME, false)) {
-//                startActivity(Intent(this@HomeActivity, StoreActivity::class.java))
-////            }
-////        }
-
-     setContentView(R.layout.fragment_transaction)
-//
-<<<<<<< Updated upstream
-//        startActivity(Intent(this@HomeActivity, SignScreen::class.java))
-////        startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
-//        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, HomeFragment() ).commit()
-//        setupBottomNavigation()
-//        startActivity(Intent(this@HomeActivity, SignScreen::class.java))
-=======
-//     setContentView(R.layout.activity_home)
-//
-       startActivity(Intent(this@HomeActivity, SignScreen::class.java))
-////        startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
-//        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, HomeFragment() ).commit()
-//        setupBottomNavigation()
-//        startActivity(Intent(this@HomeActivity, StoreDetailActivity::class.java))
->>>>>>> Stashed changes
+        Toast.makeText(applicationContext,"HELLOO", Toast.LENGTH_SHORT).show()
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, HomeFragment() ).commit()
+        setupBottomNavigation()
     }
-
-     fun setupBottomNavigation(){
+    fun setupBottomNavigation(){
         binding.bottomNavigation.setOnItemSelectedListener { it ->
             when (it) {
                 R.id.itemHome -> {
@@ -90,6 +44,7 @@ class HomeActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainer, fragment)
             .commit()
     }
+
+
+
 }
-
-

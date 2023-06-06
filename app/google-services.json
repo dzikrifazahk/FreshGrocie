@@ -41,6 +41,43 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222027779211:android:1cf95e80ab114bf138588e",
+        "android_client_info": {
+          "package_name": "com.bangkit.freshgrocie.ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222027779211-0q0id8i5rqa1dcv5r3e9dhdeoerta3de.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bangkit.freshgrocie.ui",
+            "certificate_hash": "48971678e58e9304b5294dae13506dc35ca7923d"
+          }
+        },
+        {
+          "client_id": "222027779211-72p2b27mvbn72l8vd4nrpf5mf3ul4ltf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzLtkQjnKmcZN9a4dD7XwX1MPi-EhqMCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222027779211-72p2b27mvbn72l8vd4nrpf5mf3ul4ltf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"
