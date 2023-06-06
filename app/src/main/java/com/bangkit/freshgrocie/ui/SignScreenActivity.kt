@@ -39,9 +39,8 @@ class SignScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_screen)
-        firebaseinit()
-
+//        setContentView(R.layout.activity_transaction)
+//        firebaseinit()
 
 //        setContentView(R.layout.activity_home)
 //        ChartButtonHome.setOnClickListener{
@@ -59,11 +58,8 @@ class SignScreenActivity : AppCompatActivity() {
 //        startActivity(Intent(this@HomeActivity, SignScreen::class.java))
 ////        startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
 
-//        startActivity(Intent(this@HomeActivity, SignScreen::class.java))
+        startActivity(Intent(this@SignScreenActivity, TransactionActivity::class.java))
     }
-
-
-
 
     fun firebaseinit(){
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

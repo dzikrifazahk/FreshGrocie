@@ -19,7 +19,7 @@
     <item
         android:id="@+id/itemStore"
         android:title="@string/menuStore"
-        android:icon="@drawable/store"
+        android:icon="@drawable/store_icon"
         app:cnb_iconColor="@color/md_white_1000"
         app:cnb_textColor="@color/md_white_1000"/>
 

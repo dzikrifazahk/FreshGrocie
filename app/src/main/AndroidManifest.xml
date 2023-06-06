@@ -16,7 +16,7 @@
         android:theme="@style/Theme.fresgrocie"
         tools:targetApi="31">
         <activity
-            android:name=".ui.Transaction"
+            android:name=".ui.TransactionActivity"
             android:exported="false" />
         <activity
             android:name=".ui.StoreDetailActivity"

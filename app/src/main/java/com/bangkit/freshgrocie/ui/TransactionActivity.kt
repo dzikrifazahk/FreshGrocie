@@ -10,7 +10,7 @@ import com.bangkit.freshgrocie.TabTransactionAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class Transaction : AppCompatActivity() {
+class TransactionActivity : AppCompatActivity() {
     companion object {
         @StringRes
         private val TAB_TITLES = intArrayOf(
@@ -21,7 +21,7 @@ class Transaction : AppCompatActivity() {
         @DrawableRes
         private val TAB_ICON = intArrayOf(
             R.drawable.on_going_icon,
-            R.drawable.compeleted_icon,
+            R.drawable.completed_icon,
             R.drawable.canceled_icon
         )
     }
