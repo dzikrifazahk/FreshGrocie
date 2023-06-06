@@ -31,6 +31,7 @@ class ChartFragment : Fragment() {
     lateinit var courseList: List<CartModel>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+<<<<<<< Updated upstream
         activity?.let {
 //            toolbarTile = it.findViewById(R.id.homePage_toolbarTitle)
         
@@ -41,6 +42,18 @@ class ChartFragment : Fragment() {
         courseList = courseList + CartModel("Android",1500,5, R.drawable.apple_season)
         courseList = courseList + CartModel("Python",1500,1, R.drawable.apple_season)
         courseList = courseList + CartModel("Javascript",1500,3, R.drawable.apple_season)
+=======
+//        activity?.let {
+//            toolbarTile = it.findViewById(R.id.homePage_toolbarTitle)
+//        }
+//        courseCRV = findViewById(R.id.wish_product)
+//        courseList = ArrayList<CartModel>()
+//        courseList = courseList + CartModel("C++",1500,2, R.drawable.apple_season)
+//        courseList = courseList + CartModel("Java",1500,4, R.drawable.apple_season)
+//        courseList = courseList + CartModel("Android",1500,5, R.drawable.apple_season)
+//        courseList = courseList + CartModel("Python",1500,1, R.drawable.apple_season)
+//        courseList = courseList + CartModel("Javascript",1500,3, R.drawable.apple_season)
+>>>>>>> Stashed changes
 //        val courseAdapter = CartAdapter(courseList = courseList, this@ChartFragment)
 //        courseCRV.adapter = courseAdapter
 //        courseCRV.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
@@ -48,11 +61,16 @@ class ChartFragment : Fragment() {
 //                applicationContext, courseList[position].courseName + " selected",
 //                Toast.LENGTH_SHORT
 //            ).show()
+<<<<<<< Updated upstream
         }
 //        arguments?.let {
 //            param1 = it.getString(ARG_PARAM1)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
+=======
+//        }
+
+>>>>>>> Stashed changes
     }
 
 //    override fun onCreateView(

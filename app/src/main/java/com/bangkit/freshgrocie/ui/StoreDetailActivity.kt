@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.Button
 import android.widget.GridView
+import android.widget.ListView
 import android.widget.RatingBar
 import android.widget.Toast
 import com.bangkit.freshgrocie.GVStoreProductAdapter
@@ -17,7 +18,7 @@ class StoreDetailActivity : AppCompatActivity() {
     lateinit var imageUrl: ArrayList<String>
     lateinit var sliderView: SliderView
     lateinit var sliderAdapter: PhotoboothAdapter
-    lateinit var courseGRV: GridView
+    lateinit var courseGRV: ListView
     lateinit var courseList: List<GVStoreProduct>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

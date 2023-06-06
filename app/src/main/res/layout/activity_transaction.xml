@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Transaction">
+    <LinearLayout
+        android:id="@+id/appbarT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|left"
+        android:orientation="horizontal">
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:background="@android:color/transparent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/back_icon_black"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transaction"
+        android:textSize="20dp"
+        android:fontFamily="@font/urbanist_black"/>
+    </LinearLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabT_layout"
+        android:layout_below="@id/appbarT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/transcation_view_layout"
+        android:layout_width="match_parent"
+        android:layout_below="@id/tabT_layout"
+        android:layout_height="match_parent">
+
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+</RelativeLayout>

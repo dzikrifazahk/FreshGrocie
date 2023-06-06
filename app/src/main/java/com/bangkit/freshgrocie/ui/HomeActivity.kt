@@ -25,13 +25,21 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+<<<<<<< Updated upstream
 //        bindingSignScreen = ActivitySignScreenBinding.inflate(layoutInflater)
+=======
+   //     binding = ActivityHomeBinding.inflate(layoutInflater)
+>>>>>>> Stashed changes
 //        setContentView(R.layout.activity_home)
 //        ChartButtonHome.setOnClickListener{
 //
 //        }
+<<<<<<< Updated upstream
 //        setContentView(bindingSignScreen.root)
 
+=======
+    //    setContentView(binding.root)
+>>>>>>> Stashed changes
 //        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 //        PreferenceManager.getDefaultSharedPreferences(this).apply {
 //            if (!getBoolean(OnboardingFragment.COMPLETED_ONBOARDING_PREF_NAME, false)) {
@@ -41,11 +49,21 @@ class HomeActivity : AppCompatActivity() {
 
      setContentView(R.layout.fragment_transaction)
 //
+<<<<<<< Updated upstream
 //        startActivity(Intent(this@HomeActivity, SignScreen::class.java))
 ////        startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
 //        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, HomeFragment() ).commit()
 //        setupBottomNavigation()
 //        startActivity(Intent(this@HomeActivity, SignScreen::class.java))
+=======
+//     setContentView(R.layout.activity_home)
+//
+       startActivity(Intent(this@HomeActivity, SignScreen::class.java))
+////        startActivity(Intent(this@HomeActivity, HomeActivity::class.java))
+//        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, HomeFragment() ).commit()
+//        setupBottomNavigation()
+//        startActivity(Intent(this@HomeActivity, StoreDetailActivity::class.java))
+>>>>>>> Stashed changes
     }
 
      fun setupBottomNavigation(){

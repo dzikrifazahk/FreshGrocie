@@ -14,7 +14,10 @@ class SignScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_screen)
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 
 }

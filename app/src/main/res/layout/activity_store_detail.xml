@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center|left"
-        android:id="@+id/langlay"
+        android:id="@+id/solappbar"
         >
         <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="wrap_content"
@@ -27,123 +27,134 @@
             android:textSize="24dp"
             android:text="Store"/>
     </LinearLayout>
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/langlay"
-        android:layout_above="@+id/bottom_navigation"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        >
-
-        <com.smarteist.autoimageslider.SliderView
-            android:id="@+id/photbooth"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_centerInParent="true"
-            app:sliderAnimationDuration="600"
-            app:sliderAutoCycleDirection="back_and_forth"
-            app:sliderIndicatorAnimationDuration="600"
-            app:sliderIndicatorEnabled="true"
-            app:sliderIndicatorGravity="center_horizontal|bottom"
-            app:sliderIndicatorMargin="15dp"
-            app:sliderIndicatorOrientation="horizontal"
-            app:sliderIndicatorPadding="3dp"
-            app:sliderIndicatorRadius="2dp"
-            app:sliderIndicatorSelectedColor="@color/md_fc_greenligth"
-            app:sliderIndicatorUnselectedColor="@color/md_fc_graylight"
-            app:sliderScrollTimeInSec="1" />
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_marginHorizontal="12dp"
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="430dp"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true">
+        android:layout_below="@id/solappbar">
         <LinearLayout
-            android:layout_marginBottom="10dp"
-            android:id="@+id/store_detail"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:gravity="center|left"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical"
-                >
-                <TextView
-                    android:id="@+id/tv_store_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Store Name"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/urbanist_black"/>
-                <TextView
-                    android:id="@+id/tv_store_category"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Store Category"
-                    android:fontFamily="@font/urbanist"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginLeft="8dp">
-                <RatingBar
-                    android:scaleX=".5"
-                    android:scaleY=".5"
-                android:id="@+id/ratingbarstore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:stepSize="0.5"
-                android:theme="@style/Widget.AppCompat.RatingBar"
-                android:background="@android:color/transparent"
-                android:numStars="5"/>
-
-            </LinearLayout>
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:src="@drawable/save"></androidx.appcompat.widget.AppCompatImageButton>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/store_info"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical"
-            android:layout_below="@+id/store_detail">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Description"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/urbanist_black"/>
-            <TextView
-                android:id="@+id/store_intro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/desc"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_below="@+id/store_info"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <GridView
-                android:id="@+id/store_product"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:horizontalSpacing="6dp"
-                android:numColumns="2"
-                android:verticalSpacing="6dp" />
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    >
+
+                    <com.smarteist.autoimageslider.SliderView
+                        android:id="@+id/photbooth"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_centerInParent="true"
+                        app:sliderAnimationDuration="600"
+                        app:sliderAutoCycleDirection="back_and_forth"
+                        app:sliderIndicatorAnimationDuration="600"
+                        app:sliderIndicatorEnabled="true"
+                        app:sliderIndicatorGravity="center_horizontal|bottom"
+                        app:sliderIndicatorMargin="15dp"
+                        app:sliderIndicatorOrientation="horizontal"
+                        app:sliderIndicatorPadding="3dp"
+                        app:sliderIndicatorRadius="2dp"
+                        app:sliderIndicatorSelectedColor="@color/md_fc_greenligth"
+                        app:sliderIndicatorUnselectedColor="@color/md_fc_graylight"
+                        app:sliderScrollTimeInSec="1" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginHorizontal="12dp"
+                    android:id="@+id/bottom_navigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="430dp"
+                    android:layout_below="@id/spinner"
+                    android:orientation="vertical"
+                    android:layout_alignParentBottom="true">
+                    <LinearLayout
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/store_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:orientation="vertical"
+                            >
+                            <TextView
+                                android:id="@+id/tv_store_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Store Name"
+                                android:textSize="20dp"
+                                android:fontFamily="@font/urbanist_black"/>
+                            <TextView
+                                android:id="@+id/tv_store_category"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Store Category"
+                                android:fontFamily="@font/urbanist"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginLeft="8dp">
+                            <RatingBar
+                                android:scaleX=".5"
+                                android:scaleY=".5"
+                                android:id="@+id/ratingbarstore"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:stepSize="0.5"
+                                android:theme="@style/Widget.AppCompat.RatingBar"
+                                android:background="@android:color/transparent"
+                                android:numStars="5"/>
+
+                        </LinearLayout>
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/save"></androidx.appcompat.widget.AppCompatImageButton>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/store_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:orientation="vertical"
+                        android:layout_below="@+id/store_detail">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Description"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/urbanist_black"/>
+                        <TextView
+                            android:id="@+id/store_intro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/desc"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_below="@+id/store_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <GridView
+                            android:id="@+id/store_product"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:horizontalSpacing="6dp"
+                            android:numColumns="2"
+                            android:verticalSpacing="6dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
         </LinearLayout>
-
-
-    </RelativeLayout>
+    </ScrollView>
 
 
 </RelativeLayout>

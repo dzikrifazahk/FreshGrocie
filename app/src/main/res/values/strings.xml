@@ -11,7 +11,9 @@
     <string name="description_onboarding_3">By using FreshGrocie, you can get recommendations fresh fruit and vegetable and comes with freshness fruit and vegetable detection feature</string>
 
     <string name="start_text_advice">By continuing on this application you agree to our Terms of Use and Privacy Policy</string>
-
+    <string name="tab1">Ongoing</string>
+    <string name="tab2">Completed</string>
+    <string name="tab3">Cancelled</string>
     <string name="start">start</string>
     <string name="skip">Skip</string>
     <string name="finish">finish</string>
