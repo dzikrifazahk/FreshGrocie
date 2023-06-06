@@ -11,12 +11,14 @@ import com.bangkit.freshgrocie.fragment.ProfileFragment
 import com.bangkit.freshgrocie.fragment.StoreFragment
 
 class HomeActivity : AppCompatActivity() {
+
     private lateinit var binding : ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_screen)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        Toast.makeText(applicationContext,"HELLOO", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(applicationContext,"HELLOO", Toast.LENGTH_SHORT).show()
         supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, HomeFragment() ).commit()
         setupBottomNavigation()
     }
@@ -39,12 +41,11 @@ class HomeActivity : AppCompatActivity() {
             true
         }
     }
+
     private fun openFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
             .commit()
     }
-
-
 
 }
