@@ -18,7 +18,7 @@ class StoreDetailActivity : AppCompatActivity() {
     lateinit var imageUrl: ArrayList<String>
     lateinit var sliderView: SliderView
     lateinit var sliderAdapter: PhotoboothAdapter
-    lateinit var courseGRV: ListView
+    lateinit var courseGRV: GridView
     lateinit var courseList: List<GVStoreProduct>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,13 +52,18 @@ class StoreDetailActivity : AppCompatActivity() {
         courseList = courseList + GVStoreProduct("Android", R.drawable.apple_season)
         courseList = courseList + GVStoreProduct("Python", R.drawable.apple_season)
         courseList = courseList + GVStoreProduct("Javascript", R.drawable.apple_season)
+        courseList = courseList + GVStoreProduct("Python", R.drawable.apple_season)
+        courseList = courseList + GVStoreProduct("Javascript", R.drawable.apple_season)
+        courseList = courseList + GVStoreProduct("Python", R.drawable.apple_season)
+        courseList = courseList + GVStoreProduct("Javascript", R.drawable.apple_season)
         val courseAdapter = GVStoreProductAdapter(courseList = courseList, this@StoreDetailActivity)
         courseGRV.adapter = courseAdapter
         courseGRV.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             Toast.makeText(
                 applicationContext, courseList[position].courseName + " selected",
                 Toast.LENGTH_SHORT
-            ).show()
-        }
+            ).show()}
+
     }
+
 }

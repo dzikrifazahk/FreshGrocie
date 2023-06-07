@@ -26,13 +26,6 @@ class HomeFragment : Fragment() {
     private val viewModel by viewModels<HomeViewModel> {
         HomeViewModelFactory.getInstance(requireActivity())
     }
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        binding = FragmentHomeBinding.inflate(layoutInflater)
-
-//        binding.carouselRecyclerView.addItemDecoration(itemDecoration)
-
-//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

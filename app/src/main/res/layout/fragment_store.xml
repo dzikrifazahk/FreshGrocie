@@ -11,20 +11,12 @@
         android:layout_height="wrap_content">
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
             android:fitsSystemWindows="true"
             app:contentScrim="@color/md_white_1000"
             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
             app:title="@string/app_name"
             android:id="@+id/Appbar_home_fragment">
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fitsSystemWindows="true"
-                app:contentScrim="@color/md_white_1000"
-                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-                app:title="@string/app_name"
-                android:id="@+id/Appbar_home">
 
                 <LinearLayout
                     android:id="@+id/linear1"
@@ -83,7 +75,6 @@
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -93,7 +84,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <com.google.android.material.search.SearchBar
                 android:id="@+id/searchBar_homeStore"
                 android:layout_width="match_parent"
