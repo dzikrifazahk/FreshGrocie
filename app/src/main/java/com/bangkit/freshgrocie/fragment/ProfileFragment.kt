@@ -1,19 +1,29 @@
 package com.bangkit.freshgrocie.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.bangkit.freshgrocie.HomeAdapter
 import com.bangkit.freshgrocie.R
+import com.bangkit.freshgrocie.databinding.FragmentHomeBinding
+import com.bangkit.freshgrocie.databinding.FragmentProfileBinding
+import com.bangkit.freshgrocie.databinding.FragmentStoreBinding
+import com.bangkit.freshgrocie.viewmodel.HomeViewModel
+import com.bangkit.freshgrocie.viewmodel.HomeViewModelFactory
+import com.bangkit.freshgrocie.viewmodel.StoreViewModel
+import com.bangkit.freshgrocie.viewmodel.StoreViewModelFactory
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment() {
 
+    private lateinit var binding : FragmentProfileBinding
+//    private val viewModel by viewModels<StoreViewModel> {
+//        StoreViewModelFactory.getInstance(requireActivity())
+//    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -22,20 +32,8 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false)
+
+        }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-
-    }
-}

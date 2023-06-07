@@ -3,6 +3,7 @@ package com.bangkit.freshgrocie.database.response
 import com.google.gson.annotations.SerializedName
 
 data class ResponseProduct(
+
 	val responseProduct: List<ResponseProductItem>
 )
 

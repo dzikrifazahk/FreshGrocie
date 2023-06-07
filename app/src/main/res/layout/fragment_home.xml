@@ -239,7 +239,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_margin="5dp"
-                android:scrollbars="horizontal"
                 tools:listitem="@layout/item_carousel" />
         </com.google.android.material.carousel.MaskableFrameLayout>
 

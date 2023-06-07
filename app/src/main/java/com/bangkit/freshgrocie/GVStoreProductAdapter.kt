@@ -53,7 +53,7 @@ internal class GVStoreProductAdapter (
         }
         // on below line we are initializing our course image view
         // and course text view with their ids.
-        courseIV = convertView!!.findViewById(R.id.pruduct_image)
+        courseIV = convertView!!.findViewById(R.id.imageView)
         courseTV = convertView!!.findViewById(R.id.name_product)
         // on below line we are setting image for our course image view.
         courseIV.setImageResource(courseList.get(position).courseImg)
