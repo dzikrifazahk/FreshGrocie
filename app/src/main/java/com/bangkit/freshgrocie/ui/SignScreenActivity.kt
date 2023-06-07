@@ -40,7 +40,7 @@ class SignScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_transaction)
-        startActivity(Intent(this@SignScreenActivity, HomeActivity::class.java))
+        startActivity(Intent(this@SignScreenActivity, DetailProductActivity::class.java))
 //        firebaseinit()
 
 //        setContentView(R.layout.activity_home)
