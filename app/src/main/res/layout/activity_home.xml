@@ -14,9 +14,7 @@
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorWhite"
->
-
+        android:background="@color/colorWhite">
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -28,15 +26,4 @@
         android:layout_gravity="bottom"
         android:background="@drawable/rounded"
         app:menu="@menu/menu" />
-
-    <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="70dp"-->
-    <!--        android:background="@drawable/rounded"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:menu="@menu/menu" />-->
-
-
 </RelativeLayout>
