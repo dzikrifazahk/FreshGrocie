@@ -1,294 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.HomeFragment">
-
-        <LinearLayout
-            android:id="@+id/linear1"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/profile_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:src="@drawable/profile"
-                app:civ_border_color="#FF000000"
-                app:civ_border_width="2dp" />
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/md_white_1000"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:title="@string/app_name"
+            android:id="@+id/Appbar_home">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tvNameHome"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="normal"
-                    android:fontFamily="@font/urbanist"
-                    android:paddingBottom="5dp"
-                    android:text="Hallo Dzikri Faza"
-                    android:textSize="12dp" />
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvSlogan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/urbanist_black"
-                    android:textSize="20dp"
-                    android:text="Let's Live healthy" />
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:src="@drawable/profile"
+                        app:civ_border_color="#FF000000"
+                        app:civ_border_width="2dp" />
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvNameHome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist"
+                            android:paddingBottom="5dp"
+                            android:text="Hallo Dzikri Faza"
+                            android:textSize="12dp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/tvSlogan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/urbanist_black"
+                            android:text="Let's Live healthy"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/id_home_notification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:paddingHorizontal="15dp"
+                            android:src="@drawable/notification" />
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/id_home_chart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:paddingRight="15dp"
+                            android:src="@drawable/shop" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:paddingStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
+                        app:cardCornerRadius="20dp"
+                        android:layout_gravity="center_horizontal"
+                        android:elevation="5dp"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardPreventCornerOverlap="false"
+                        >
+
+                        <RelativeLayout
+                            android:id="@+id/linearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="13dp"
+                            android:paddingTop="10dp"
+                            android:paddingRight="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/Title.Normal"
+                                android:id="@+id/title_home_green"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:textColor="@color/md_white_1000"
+                                android:text="@string/textCardView" />
+
+                            <TextView
+                                android:id="@+id/sub_home"
+                                android:layout_below="@id/title_home_green"
+                                style="@style/Subtitle.Normal"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:paddingBottom="3dp"
+                                android:textColor="@color/md_white_1000"
+                                android:text="@string/textKeep" />
+
+                            <Button
+                                android:layout_below="@id/sub_home"
+                                style="@style/Widget.Material3.Button.ElevatedButton"
+                                android:id="@+id/elevatedButton"
+                                android:textStyle="bold"
+                                android:textSize="12dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:text="Click Here"/>
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_height="150dp"
+                        android:layout_width="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/svghome"/>
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
 
-
-            <LinearLayout
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_layout_bg"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.google.android.material.search.SearchBar
+                android:id="@+id/searchBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:orientation="horizontal">
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:layout_width="wrap_content"
-                    android:id="@+id/id_home_notification"
+                android:layout_marginHorizontal="16dp"
+                android:hint="@string/searchbar_hint"
+                >
+            </com.google.android.material.search.SearchBar>
+            <com.google.android.material.search.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:hint="@string/searchbar_hint"
+                app:layout_anchor="@id/searchBar"
+                >
+            </com.google.android.material.search.SearchView>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/recomendation_shop_home"
+                android:layout_width="match_parent"
+                android:layout_marginVertical="2dp"
+                android:layout_marginHorizontal="30dp"
+                android:drawableLeft="@drawable/location"
+                android:layout_height="60dp"
+                android:text="Find Your Location"
+                app:layout_constraintTop_toBottomOf="@id/searchBar"/>
+            <TextView
+                style="@style/Subtitle.Normal"
+                android:id="@+id/title_home_row1"
+                android:layout_marginVertical="8dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="12dp"
+                android:layout_height="20dp"
+                android:text="Recommended Store"
+                />
+            <LinearLayout
+                android:id="@+id/recomendation_store"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                >
+                <com.google.android.material.carousel.MaskableFrameLayout
+                    android:id="@+id/carousel_item_container"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:paddingHorizontal="15dp"
-                    android:src="@drawable/notification" />
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_home_row1"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:layout_constraintVertical_bias="0.06999999"
+                    app:shapeAppearance="?attr/shapeAppearanceCornerExtraLarge">
 
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/id_home_chart"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
-                    android:paddingRight="15dp"
-                    android:src="@drawable/shop" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/carousel_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="5dp"
+                        tools:listitem="@layout/item_carousel" />
+                </com.google.android.material.carousel.MaskableFrameLayout>
+
             </LinearLayout>
-
         </LinearLayout>
 
-        <GridLayout
-            android:id="@+id/gridLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:columnCount="2"
-            android:foregroundGravity="center_horizontal"
-            android:rowCount="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linear1">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:paddingStart="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="15dp"
-                app:cardCornerRadius="20dp"
-                android:layout_gravity="center_horizontal"
-                android:elevation="5dp"
-                app:cardBackgroundColor="@color/colorPrimary"
-                app:cardPreventCornerOverlap="false"
-                >
-
-                <RelativeLayout
-                    android:id="@+id/linearLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="13dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="8dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/Title.Normal"
-                        android:id="@+id/title_home_green"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:textColor="@color/md_white_1000"
-                        android:text="@string/textCardView" />
-
-                    <TextView
-                        android:id="@+id/sub_home"
-                        android:layout_below="@id/title_home_green"
-                        style="@style/Subtitle.Normal"
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:paddingBottom="3dp"
-                        android:textColor="@color/md_white_1000"
-                        android:text="@string/textKeep" />
-
-                    <Button
-                        android:layout_below="@id/sub_home"
-                        style="@style/Widget.Material3.Button.ElevatedButton"
-                        android:id="@+id/elevatedButton"
-                        android:textStyle="bold"
-                        android:textSize="12dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:text="Click Here"/>
-
-                </RelativeLayout>
-
-
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:layout_width="match_parent">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/svghome"/>
-            </LinearLayout>
-
-        </GridLayout>
-
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_white_rounded"
-            app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
-
-    <com.google.android.material.search.SearchBar
-        android:id="@+id/searchBar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:hint="@string/searchbar_hint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout">
-    </com.google.android.material.search.SearchBar>
-
-
-    <com.google.android.material.search.SearchView
-        android:id="@+id/searchView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:hint="@string/searchbar_hint"
-        app:layout_anchor="@id/searchBar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </com.google.android.material.search.SearchView>
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/recomendation_shop_home"
-        android:layout_width="match_parent"
-        android:layout_marginVertical="8dp"
-        android:layout_marginHorizontal="30dp"
-        android:drawableLeft="@drawable/location"
-        android:layout_height="60dp"
-        android:text="Find Your Location"
-        app:layout_constraintTop_toBottomOf="@id/searchBar"/>
-    <TextView
-
-        style="@style/Subtitle.Normal"
-        android:id="@+id/title_home_row1"
-        android:layout_marginVertical="8dp"
-        android:layout_width="match_parent"
-        android:layout_marginLeft="12dp"
-        android:layout_height="20dp"
-        android:text="Recommended Store"
-        app:layout_constraintTop_toBottomOf="@id/recomendation_shop_home"/>
-    <LinearLayout
-        android:id="@+id/recomendation_store"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_margin="5dp"
-        app:layout_consa4traintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_home_row1">
-
-        <com.google.android.material.carousel.MaskableFrameLayout
-            android:id="@+id/carousel_item_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_home_row1"
-            android:foreground="?attr/selectableItemBackground"
-            app:layout_constraintVertical_bias="0.06999999"
-            app:shapeAppearance="?attr/shapeAppearanceCornerExtraLarge">
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/carousel_recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="5dp"
-                tools:listitem="@layout/item_carousel" />
-        </com.google.android.material.carousel.MaskableFrameLayout>
-
-    </LinearLayout>
-    <TextView
-        style="@style/Subtitle.Normal"
-        android:id="@+id/title_home_row2"
-        android:layout_width="match_parent"
-        android:layout_marginLeft="12dp"
-        android:layout_height="30dp"
-        android:text="Recommended Store"
-        app:layout_constraintTop_toBottomOf="@id/recomendation_store"/>
-    <LinearLayout
-        android:id="@+id/recomendation_store2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_margin="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_home_row2">
-
-        <com.google.android.material.carousel.MaskableFrameLayout
-            android:id="@+id/carousel_item_container2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_home_row1"
-            android:foreground="?attr/selectableItemBackground"
-            app:layout_constraintVertical_bias="0.06999999"
-            app:shapeAppearance="?attr/shapeAppearanceCornerExtraLarge">
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/carousel_recycler_view2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="5dp"
-                android:scrollbars="horizontal"
-                tools:listitem="@layout/item_carousel" />
-        </com.google.android.material.carousel.MaskableFrameLayout>
-
-    </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 

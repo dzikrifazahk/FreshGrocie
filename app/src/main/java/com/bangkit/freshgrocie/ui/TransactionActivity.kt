@@ -32,7 +32,6 @@ class TransactionActivity : AppCompatActivity() {
         val viewPager: ViewPager2 = findViewById(R.id.transcation_view_layout)
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabT_layout)
-
         TabLayoutMediator(tabs, viewPager) { tab, position->
             tab.text = resources.getString(TAB_TITLES[position])
             tab.icon = resources.getDrawable(TAB_ICON[position])
