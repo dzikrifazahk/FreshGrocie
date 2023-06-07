@@ -1,5 +1,6 @@
 package com.bangkit.freshgrocie.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -28,6 +29,11 @@ class HomeActivity : AppCompatActivity() {
                 R.id.itemHome -> {
                     val fragment = HomeFragment()
                     openFragment(fragment)
+                }
+                R.id.itemDetect -> {
+                    val activityCamera = Intent()
+                    activityCamera.setClass(applicationContext, CameraActivity::class.java)
+                    startActivity(activityCamera)
                 }
                 R.id.itemStore -> {
                     val fragment = StoreFragment()
