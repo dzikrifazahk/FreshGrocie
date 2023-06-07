@@ -32,21 +32,10 @@ class TransactionActivity : AppCompatActivity() {
         val viewPager: ViewPager2 = findViewById(R.id.transcation_view_layout)
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabT_layout)
-<<<<<<< Updated upstream:app/src/main/java/com/bangkit/freshgrocie/ui/TransactionActivity.kt
-<<<<<<< Updated upstream:app/src/main/java/com/bangkit/freshgrocie/ui/TransactionActivity.kt
+
         TabLayoutMediator(tabs, viewPager) { tab, position->
             tab.text = resources.getString(TAB_TITLES[position])
             tab.icon = resources.getDrawable(TAB_ICON[position])
-=======
-        TabLayoutMediator(tabs, viewPager) { tab, position ->
-            tab.text = resources.getString(TAB_TITLES[position],
-            tab.icon = )
->>>>>>> Stashed changes:app/src/main/java/com/bangkit/freshgrocie/ui/Transaction.kt
-=======
-        TabLayoutMediator(tabs, viewPager) { tab, position ->
-            tab.text = resources.getString(TAB_TITLES[position],
-            tab.icon = )
->>>>>>> Stashed changes:app/src/main/java/com/bangkit/freshgrocie/ui/Transaction.kt
         }.attach()
     }
 }
