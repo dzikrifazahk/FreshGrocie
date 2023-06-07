@@ -104,7 +104,7 @@ class CameraActivity : AppCompatActivity() {
                                 Log.d("RESULT",  futureClassifierObj.get())
                                 this.runOnUiThread(Runnable {
                                     binding.predictedTextView?.text = futureClassifierObj.get()
-                                    binding.imageView.setImageBitmap(currentBitmapForInference!!)
+//                                    binding.imageView.setImageBitmap(currentBitmapForInference!!)
                                     Handler().postDelayed({
                                         hasInfered = false
 

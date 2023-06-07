@@ -1,22 +1,16 @@
 package com.bangkit.freshgrocie.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.bangkit.freshgrocie.HomeAdapter
 import com.bangkit.freshgrocie.R
-import com.bangkit.freshgrocie.databinding.FragmentHomeBinding
 import com.bangkit.freshgrocie.databinding.FragmentProfileBinding
-import com.bangkit.freshgrocie.databinding.FragmentStoreBinding
-import com.bangkit.freshgrocie.viewmodel.HomeViewModel
-import com.bangkit.freshgrocie.viewmodel.HomeViewModelFactory
-import com.bangkit.freshgrocie.viewmodel.StoreViewModel
-import com.bangkit.freshgrocie.viewmodel.StoreViewModelFactory
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+
 
 class ProfileFragment : Fragment() {
 
@@ -26,6 +20,9 @@ class ProfileFragment : Fragment() {
 //    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = FragmentProfileBinding.inflate(layoutInflater)
+
+
     }
 
     override fun onCreateView(
@@ -33,6 +30,13 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_profile, container, false)
+        val layout: LinearLayout = view.findViewById(R.id.logout)
+
+        layout.setOnClickListener{
+            Firebase.auth.signOut()
+        }
+
 
         }
     }

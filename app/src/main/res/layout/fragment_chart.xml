@@ -27,17 +27,8 @@
         android:layout_below="@id/appbarcart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:listitem="@layout/item_chart"
         >
     </androidx.recyclerview.widget.RecyclerView>
-    <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:id="@+id/bottom_btn"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:gravity="center_horizontal">
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
-    </LinearLayout>
 </RelativeLayout>

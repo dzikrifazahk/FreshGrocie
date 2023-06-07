@@ -33,31 +33,42 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:id="@+id/preview"
-        app:layout_constraintBottom_toTopOf="@+id/rlBottom"
+        app:layout_constraintBottom_toTopOf="@+id/content"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />
 
 
-    <RelativeLayout
-        android:id="@+id/rlBottom"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:background="#D4D5D2"
+        android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/preview">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/preview">
 
-        <ImageView
-            android:id="@+id/imageView"
+        <TextView
+            android:id="@+id/titleView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            android:paddingTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="Detection Output"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20dp"
+            android:fontFamily="@font/urbanist_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/preview"
+            app:layout_constraintVertical_bias="0.16000003" />
 
-
-    </RelativeLayout>
-
-
+    </LinearLayout>
     <TextView
         android:id="@+id/predictedTextView"
         android:layout_width="wrap_content"
@@ -67,10 +78,13 @@
         android:layout_marginLeft="15dp"
         android:text="hello"
         android:textColor="@android:color/background_dark"
-        android:textSize="26sp"
+        android:textSize="15dp"
+        android:fontFamily="@font/urbanist"
+        android:layout_marginTop="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/rlBottom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/preview"
         app:layout_constraintVertical_bias="0.16000003" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
