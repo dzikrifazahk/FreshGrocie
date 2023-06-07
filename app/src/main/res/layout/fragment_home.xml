@@ -201,11 +201,12 @@
         app:layout_constraintTop_toBottomOf="@id/searchBar"/>
     <TextView
 
-        style="@style/Title.Normal"
+        style="@style/Subtitle.Normal"
         android:id="@+id/title_home_row1"
+        android:layout_marginVertical="8dp"
         android:layout_width="match_parent"
         android:layout_marginLeft="12dp"
-        android:layout_height="30dp"
+        android:layout_height="20dp"
         android:text="Recommended Store"
         app:layout_constraintTop_toBottomOf="@id/recomendation_shop_home"/>
     <LinearLayout
@@ -214,7 +215,7 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:layout_margin="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_consa4traintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_home_row1">
