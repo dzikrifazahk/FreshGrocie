@@ -47,6 +47,7 @@ class StoreFragment : Fragment() {
             )
             binding.rvStoreData.setHasFixedSize(true);
             binding.rvStoreData.adapter = StoreAdapter(list)
+            onDestroyView()
         }
         return binding.root
     }

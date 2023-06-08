@@ -12,11 +12,15 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bangkit.freshgrocie.HomeAdapter
 import com.bangkit.freshgrocie.R
+import com.bangkit.freshgrocie.StoreAdapterHome
 import com.bangkit.freshgrocie.databinding.FragmentHomeBinding
 import com.bangkit.freshgrocie.viewmodel.HomeViewModel
 import com.bangkit.freshgrocie.viewmodel.HomeViewModelFactory
+import com.bangkit.freshgrocie.viewmodel.StoreViewModel
+import com.bangkit.freshgrocie.viewmodel.StoreViewModelFactory
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -28,9 +32,15 @@ import de.hdodenhof.circleimageview.CircleImageView
 class HomeFragment : Fragment() {
 
     private lateinit var binding : FragmentHomeBinding
+    
     private val viewModel by viewModels<HomeViewModel> {
         HomeViewModelFactory.getInstance(requireActivity())
     }
+
+    private val viewModelStore by viewModels<StoreViewModel> {
+        StoreViewModelFactory.getInstance(requireActivity())
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -71,7 +81,6 @@ class HomeFragment : Fragment() {
         }
 
         binding = FragmentHomeBinding.inflate(layoutInflater)
-            val binding = FragmentHomeBinding.inflate(inflater, container, false)
 
             with(binding) {
                 searchView.setupWithSearchBar(searchBar)
@@ -84,9 +93,9 @@ class HomeFragment : Fragment() {
                 }
             }
             // Inflate the layout for this fragment
-
-            viewModel.getProduct().observe(viewLifecycleOwner) { list ->
-                val adapter = HomeAdapter(list)
+            //STORE
+            viewModelStore.getStore().observe(viewLifecycleOwner) { list ->
+                val adapter = StoreAdapterHome(list)
                 Log.d("HomeFragment", adapter.itemCount.toString())
                 binding.carouselRecyclerView.setLayoutManager(
                     LinearLayoutManager(
@@ -96,10 +105,38 @@ class HomeFragment : Fragment() {
                     )
                 )
                 binding.carouselRecyclerView.setHasFixedSize(true);
-                binding.carouselRecyclerView.adapter = HomeAdapter(list)
+                binding.carouselRecyclerView.adapter = StoreAdapterHome(list)
+                getActivity()?.getViewModelStore()?.clear();
+            }
+
+            //PRODUCT
+            viewModel.getProduct().observe(viewLifecycleOwner) { list ->
+                val adapter = HomeAdapter(list)
+                Log.d("HomeFragment", adapter.itemCount.toString())
+                binding.rvProduct.setLayoutManager(
+                    StaggeredGridLayoutManager(2,
+                        StaggeredGridLayoutManager.VERTICAL
+                    )
+                )
+                binding.rvProduct.setHasFixedSize(true);
+                binding.rvProduct.adapter = HomeAdapter(list)
 
             }
 
+//        viewModel.getProduct().observe(viewLifecycleOwner) { list ->
+//            val adapter = HomeAdapter(list)
+//            Log.d("HomeFragment", adapter.itemCount.toString())
+//            binding.rvProduct.setLayoutManager(
+//                LinearLayoutManager(
+//                    requireContext(),
+//                    LinearLayoutManager.VERTICAL,
+//                    false
+//                )
+//            )
+//            binding.rvProduct.setHasFixedSize(true);
+//            binding.rvProduct.adapter = HomeAdapter(list)
+//
+//        }
             return binding.root
 
 

@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.freshgrocie.database.response.ResponseProductItem
 import com.bangkit.freshgrocie.databinding.ItemCarouselBinding
+import com.bangkit.freshgrocie.databinding.ItemProduct2Binding
+import com.bangkit.freshgrocie.databinding.ItemProductBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.carousel.MaskableFrameLayout
@@ -24,7 +26,7 @@ class HomeAdapter(private val listproduct: List<ResponseProductItem>) :
 
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemCarouselBinding.inflate(LayoutInflater.from(viewGroup.context),viewGroup, false)
+        val binding = ItemProductBinding.inflate(LayoutInflater.from(viewGroup.context),viewGroup, false)
         return ViewHolder(binding)
     }
 
@@ -49,12 +51,12 @@ class HomeAdapter(private val listproduct: List<ResponseProductItem>) :
 
     override fun getItemCount() = listproduct.size
 
-    class ViewHolder(binding: ItemCarouselBinding) : RecyclerView.ViewHolder(binding.root) {
-        val titleTextView: TextView = binding.titleTextView
+    class ViewHolder(binding: ItemProductBinding) : RecyclerView.ViewHolder(binding.root) {
+//        val titleTextView: TextView = binding.titleTextView
 //        val typeUser: TextView = view.findViewById(R.id.tv_item_description)
         val avatarImageView: ImageView = binding.imageView
         fun bind(item: ResponseProductItem){
-            titleTextView.text = item.productName
+//            titleTextView.text = item.productName
             Glide.with(itemView.context)
                 .load(item.productPhoto)
                 .override(200,150)
