@@ -44,16 +44,31 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/tvNameHome"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/urbanist"
-                            android:paddingBottom="5dp"
-                            android:text="Hallo Dzikri Faza"
-                            android:textSize="12dp"
-                            android:textStyle="normal" />
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urbanist"
+                                android:paddingBottom="5dp"
+                                android:text="Hallo,"
+                                android:textSize="12dp"
+                                android:layout_marginRight="5dp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tvNameHome"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urbanist"
+                                android:paddingBottom="5dp"
+                                android:text="Unkown"
+                                android:textSize="12dp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
                         <TextView
                             android:id="@+id/tvSlogan"
                             android:layout_width="wrap_content"
@@ -235,12 +250,29 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        tools:itemCount="1"
                         android:layout_margin="5dp"
                         tools:listitem="@layout/item_carousel" />
                 </com.google.android.material.carousel.MaskableFrameLayout>
-
             </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Subtitle.Normal"
+                android:id="@+id/titleProduct"
+                android:layout_marginVertical="8dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="12dp"
+                android:layout_height="20dp"
+                android:text="MSME's Product"
+                />
+
         </LinearLayout>
+        </LinearLayout>
+
 
     </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

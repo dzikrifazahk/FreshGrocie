@@ -68,12 +68,14 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.1.0'
     implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
+    implementation 'com.google.firebase:firebase-firestore:24.4.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     // Skip this if you don't want to use integration libraries or configure Glide.
     kapt 'com.github.bumptech.glide:compiler:4.15.1'
+    implementation 'com.squareup.picasso:picasso:2.8'
 
     //ML
 

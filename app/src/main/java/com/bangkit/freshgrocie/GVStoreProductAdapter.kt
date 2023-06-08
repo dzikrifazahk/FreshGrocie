@@ -43,7 +43,7 @@ internal class GVStoreProductAdapter (
             convertView = layoutInflater!!.inflate(R.layout.item_product, null)
         }
         courseIV = convertView!!.findViewById(R.id.imageView)
-        courseTV = convertView!!.findViewById(R.id.name_product)
+        courseTV = convertView!!.findViewById(R.id.tvNameHome)
         courseIV.setImageResource(courseList.get(position).courseImg)
         courseTV.setText(courseList.get(position).courseName)
         return convertView
