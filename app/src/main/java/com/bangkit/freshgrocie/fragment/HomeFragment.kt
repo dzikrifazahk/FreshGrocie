@@ -13,10 +13,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.bangkit.freshgrocie.ChartActivity
 import com.bangkit.freshgrocie.HomeAdapter
 import com.bangkit.freshgrocie.R
 import com.bangkit.freshgrocie.StoreAdapterHome
 import com.bangkit.freshgrocie.databinding.FragmentHomeBinding
+import com.bangkit.freshgrocie.ui.SignScreenActivity
 import com.bangkit.freshgrocie.viewmodel.HomeViewModel
 import com.bangkit.freshgrocie.viewmodel.HomeViewModelFactory
 import com.bangkit.freshgrocie.viewmodel.StoreViewModel
@@ -81,16 +83,16 @@ class HomeFragment : Fragment() {
             }
         }
 
-//            with(binding) {
-//                searchView.setupWithSearchBar(searchBar)
-//                binding.idHomeChart.setOnClickListener {
-//                    Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
-//                    startActivity(Intent(context, ChartFragment::class.java))
-//                }
-//                binding.elevatedButton.setOnClickListener {
-//                    Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
-//                }
-//            }
+            with(binding) {
+                searchView.setupWithSearchBar(searchBar)
+                binding.idHomeChart.setOnClickListener {
+                    startActivity(Intent(context, ChartActivity::class.java))
+                    Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
+                }
+                binding.elevatedButton.setOnClickListener {
+                    Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
+                }
+            }
             // Inflate the layout for this fragment
             //STORE
             viewModelStore.getStore().observe(viewLifecycleOwner) { list ->
@@ -122,20 +124,6 @@ class HomeFragment : Fragment() {
 
             }
 
-//        viewModel.getProduct().observe(viewLifecycleOwner) { list ->
-//            val adapter = HomeAdapter(list)
-//            Log.d("HomeFragment", adapter.itemCount.toString())
-//            binding.rvProduct.setLayoutManager(
-//                LinearLayoutManager(
-//                    requireContext(),
-//                    LinearLayoutManager.VERTICAL,
-//                    false
-//                )
-//            )
-//            binding.rvProduct.setHasFixedSize(true);
-//            binding.rvProduct.adapter = HomeAdapter(list)
-//
-//        }
             return binding.root
 
 

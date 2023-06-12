@@ -21,7 +21,6 @@ class ProfileFragment : Fragment() {
 
     private lateinit var binding : FragmentProfileBinding
 
-    lateinit var btnLogout: LinearLayout
 //    private val viewModel by viewModels<StoreViewModel> {
 //        StoreViewModelFactory.getInstance(requireActivity())
 //    }
@@ -48,9 +47,6 @@ class ProfileFragment : Fragment() {
         }
 
         return view
-//            btnL.setOnClickListener {
-//                Firebase.auth.signOut()
-//            }
 
         }
     }

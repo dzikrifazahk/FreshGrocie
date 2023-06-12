@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChartActivity">
+    tools:context=".fragment.ChartFragment">
+    <LinearLayout
+        android:id="@+id/appbarcart"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center|left"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:background="@android:color/transparent"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/back_icon_black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cart"
+            android:textSize="20dp"
+            android:fontFamily="@font/urbanist_black"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/wish_product"
+        android:layout_below="@id/appbarcart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_chart"
+        >
+    </androidx.recyclerview.widget.RecyclerView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
