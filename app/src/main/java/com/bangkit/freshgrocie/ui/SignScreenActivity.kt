@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.bangkit.freshgrocie.R
+import com.bangkit.freshgrocie.fragment.HomeFragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -25,7 +26,7 @@ class SignScreenActivity : AppCompatActivity() {
     private lateinit var ChartButtonHome : ImageButton
 
     private val TAG = "GoogleActivity"
-    private val RC_SIGN_IN = 9001
+    private val RC_SIGN_IN = 303
 
     // [START declare_auth]
     private var mAuth: FirebaseAuth? = null
@@ -43,17 +44,11 @@ class SignScreenActivity : AppCompatActivity() {
 //        startActivity(Intent(this@SignScreenActivity, Sig::class.java))
 
         firebaseinit()
-        val user = Firebase.auth.currentUser
-        if (user != null) {
-            val intent = Intent()
-            intent.setClass(applicationContext, HomeActivity::class.java)
-            startActivity(intent)
-        } else {
-        }
+
 
 //        setContentView(R.layout.activity_home)
 //        ChartButtonHome.setOnClickListener{
-//
+
 //        }
 
 //        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
@@ -85,6 +80,13 @@ class SignScreenActivity : AppCompatActivity() {
         signBtn.setOnClickListener {
             signIn()
         }
+        val user = Firebase.auth.currentUser
+        println("balbalbla "+user)
+        if (user != null) {
+            val intent = Intent()
+            intent.setClass(applicationContext, HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onStart() {
@@ -107,20 +109,18 @@ class SignScreenActivity : AppCompatActivity() {
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
                 account.idToken?.let { firebaseAuthWithGoogle(it) }
 
-                val user = Firebase.auth.currentUser
-                if (user != null) {
-                    val userMap: MutableMap<String, Any> = HashMap()
-                    userMap["user_email"] = user.email.toString()
-                    userMap["user_name"] = user.displayName.toString()
-                    userMap["user_photo"] = user.photoUrl.toString()
+//                val user = Firebase.auth.currentUser
+//                if (user != null) {
+//                    val userMap: MutableMap<String, Any> = HashMap()
+//                    userMap["user_email"] = user.email.toString()
+//                    userMap["user_name"] = user.displayName.toString()
+//                    userMap["user_photo"] = user.photoUrl.toString()
+//
+//
+//                    var dbFire = FirebaseFirestore.getInstance()
+//                    dbFire.collection("users").document(user.uid).set(userMap)
 
-
-                    var dbFire = FirebaseFirestore.getInstance()
-                    dbFire.collection("users").document(user.uid).set(userMap)
-
-                } else {
-                    // No user is signed in
-                }
+//                }
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e)
@@ -140,10 +140,19 @@ class SignScreenActivity : AppCompatActivity() {
                     Log.d(TAG, "signInWithCredential:success")
                     val user = mAuth!!.currentUser
                     if (user != null) {
-                        updateUI(user)
+                        val userMap: MutableMap<String, Any> = HashMap()
+                        userMap["user_email"] = user.email.toString()
+                        userMap["user_name"] = user.displayName.toString()
+                        userMap["user_photo"] = user.photoUrl.toString()
+
+
+                        var dbFire = FirebaseFirestore.getInstance()
+                        dbFire.collection("users").document(user.uid).set(userMap)
+
                         val intent = Intent()
                         intent.setClass(applicationContext, HomeActivity::class.java)
                         startActivity(intent)
+                        updateUI(user)
                     }
                 } else {
                     // If sign in fails, display a message to the user.

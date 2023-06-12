@@ -51,7 +51,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
 
     ): View? {
-
+        binding = FragmentHomeBinding.inflate(layoutInflater)
+//        val binding = FragmentHomeBinding.inflate(inflater, container, false)
         var db = FirebaseFirestore.getInstance()
         val user = Firebase.auth.currentUser
 
@@ -80,18 +81,16 @@ class HomeFragment : Fragment() {
             }
         }
 
-        binding = FragmentHomeBinding.inflate(layoutInflater)
-
-            with(binding) {
-                searchView.setupWithSearchBar(searchBar)
-                binding.idHomeChart.setOnClickListener {
-                    Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(context, ChartFragment::class.java))
-                }
-                binding.elevatedButton.setOnClickListener {
-                    Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
-                }
-            }
+//            with(binding) {
+//                searchView.setupWithSearchBar(searchBar)
+//                binding.idHomeChart.setOnClickListener {
+//                    Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
+//                    startActivity(Intent(context, ChartFragment::class.java))
+//                }
+//                binding.elevatedButton.setOnClickListener {
+//                    Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
+//                }
+//            }
             // Inflate the layout for this fragment
             //STORE
             viewModelStore.getStore().observe(viewLifecycleOwner) { list ->
