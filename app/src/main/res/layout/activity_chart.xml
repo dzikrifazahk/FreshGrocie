@@ -3,21 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.ChartFragment">
+    tools:context=".ui.ChartActivity">
     <LinearLayout
         android:id="@+id/appbarcart"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:gravity="center|left"
         android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageButton
+        <ImageView
+            android:id="@+id/backButton"
             android:background="@android:color/transparent"
-            android:layout_width="60dp"
+            android:layout_width="30dp"
+            android:layout_margin="5dp"
             android:layout_height="60dp"
             android:src="@drawable/back_icon_black"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="Cart"
             android:textSize="20dp"
             android:fontFamily="@font/urbanist_black"/>
