@@ -2,10 +2,13 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rl_create_account"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_white_1000">
+    android:background="@color/md_white_1000"
+    tools:context=".ui.DetailProductActivity">
+
     <LinearLayout
         android:padding="10dp"
         android:layout_width="match_parent"
@@ -13,7 +16,8 @@
         android:gravity="center|left"
         android:id="@+id/appbar_product"
         >
-        <androidx.appcompat.widget.AppCompatImageButton
+        <ImageView
+            android:id="@+id/backButtonDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_arrow_back_24"
@@ -24,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24dp"
-            android:text="Product Short Name"/>
+            android:text="Product Detail"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/product_sum"
@@ -43,8 +47,8 @@
                 android:layout_marginEnd="4dp"
                 >
 
-                <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/photbooth"
+                <ImageView
+                    android:id="@+id/image"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:layout_centerInParent="true"
@@ -83,14 +87,14 @@
                         android:orientation="vertical"
                         >
                         <TextView
-                            android:id="@+id/tv_store_name"
+                            android:id="@+id/tvProductName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Product Name"
                             android:textSize="20dp"
                             android:fontFamily="@font/urbanist_black"/>
                         <TextView
-                            android:id="@+id/tv_store_category"
+                            android:id="@+id/tvProductCategory"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Product Category"
@@ -167,7 +171,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
-                            android:id="@+id/store_intro"
+                            android:id="@+id/productDescription"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/desc"/>

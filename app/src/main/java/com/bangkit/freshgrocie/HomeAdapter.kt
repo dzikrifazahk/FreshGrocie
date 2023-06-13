@@ -1,15 +1,19 @@
 package com.bangkit.freshgrocie
 
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.freshgrocie.database.response.ResponseProductItem
 import com.bangkit.freshgrocie.databinding.ItemCarouselBinding
 import com.bangkit.freshgrocie.databinding.ItemProduct2Binding
 import com.bangkit.freshgrocie.databinding.ItemProductBinding
+import com.bangkit.freshgrocie.ui.DetailProductActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.carousel.MaskableFrameLayout
@@ -19,7 +23,7 @@ class HomeAdapter(private val listproduct: List<ResponseProductItem>) :
     RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     private var onItemClickCallback: OnItemClickCallback? = null
-
+    var onItemClick: ((ResponseProductItem) -> Unit)? = null
     fun setOnItemClickCallback(callback: OnItemClickCallback) {
         onItemClickCallback = callback
     }
@@ -35,6 +39,11 @@ class HomeAdapter(private val listproduct: List<ResponseProductItem>) :
         if (product != null)
         {
            viewHolder.bind(product)
+            viewHolder.itemView.setOnClickListener {
+                onItemClick?.invoke(product)
+
+//                Log.e("Berhasil", "Berhasil")
+            }
         }
 
 //        viewHolder.titleTextView.text = product.productName
@@ -52,11 +61,11 @@ class HomeAdapter(private val listproduct: List<ResponseProductItem>) :
     override fun getItemCount() = listproduct.size
 
     class ViewHolder(binding: ItemProductBinding) : RecyclerView.ViewHolder(binding.root) {
-//        val titleTextView: TextView = binding.titleTextView
+        val titleTextView: TextView = binding.titleTextView
 //        val typeUser: TextView = view.findViewById(R.id.tv_item_description)
         val avatarImageView: ImageView = binding.imageView
         fun bind(item: ResponseProductItem){
-//            titleTextView.text = item.productName
+            titleTextView.text = item.productName
             Glide.with(itemView.context)
                 .load(item.productPhoto)
                 .override(200,150)

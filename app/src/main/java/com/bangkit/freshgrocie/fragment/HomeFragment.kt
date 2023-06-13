@@ -17,6 +17,7 @@ import com.bangkit.freshgrocie.HomeAdapter
 import com.bangkit.freshgrocie.R
 import com.bangkit.freshgrocie.StoreAdapterHome
 import com.bangkit.freshgrocie.databinding.FragmentHomeBinding
+import com.bangkit.freshgrocie.ui.DetailProductActivity
 import com.bangkit.freshgrocie.viewmodel.HomeViewModel
 import com.bangkit.freshgrocie.viewmodel.HomeViewModelFactory
 import com.bangkit.freshgrocie.viewmodel.StoreViewModel
@@ -55,6 +56,7 @@ class HomeFragment : Fragment() {
 //        val binding = FragmentHomeBinding.inflate(inflater, container, false)
         var db = FirebaseFirestore.getInstance()
         val user = Firebase.auth.currentUser
+
 
         if (user != null) {
             val docRef: DocumentReference = db.collection("users").document(user.uid)
@@ -118,7 +120,13 @@ class HomeFragment : Fragment() {
                     )
                 )
                 binding.rvProduct.setHasFixedSize(true);
-                binding.rvProduct.adapter = HomeAdapter(list)
+                binding.rvProduct.adapter = adapter
+
+                adapter.onItemClick = {
+                    val intent = Intent(context, DetailProductActivity::class.java)
+                    intent.putExtra("products", it)
+                    startActivity(intent)
+                }
 
             }
 

@@ -12,7 +12,6 @@ class ChartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chart)
 
-
         val backBtn:ImageView = findViewById(R.id.backButton)
             backBtn.setOnClickListener {
                 startActivity(Intent(applicationContext, HomeActivity::class.java))
