@@ -154,7 +154,7 @@
                             <Button
                                 android:layout_below="@id/sub_home"
                                 style="@style/Widget.Material3.Button.ElevatedButton"
-                                android:id="@+id/elevatedButton"
+                                android:id="@+id/allLocation"
                                 android:textStyle="bold"
                                 android:textSize="12dp"
                                 android:layout_width="match_parent"

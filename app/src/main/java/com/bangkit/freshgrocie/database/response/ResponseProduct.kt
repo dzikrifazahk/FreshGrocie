@@ -34,14 +34,14 @@ data class ResponseProductItem(
 	val productPhoto: String?
 ): Parcelable {
 	constructor(parcel: Parcel) : this(
-		parcel.readString(),
+		parcel.readString() ?: "",
 		parcel.readValue(Int::class.java.classLoader) as? Int,
 		parcel.readValue(Int::class.java.classLoader) as? Int,
-		parcel.readString(),
-		parcel.readString(),
-		parcel.readString(),
+		parcel.readString() ?: "",
+		parcel.readString() ?: "",
+		parcel.readString() ?: "",
 		parcel.readValue(Double::class.java.classLoader) as? Double,
-		parcel.readString()
+		parcel.readString() ?: ""
 	) {
 	}
 

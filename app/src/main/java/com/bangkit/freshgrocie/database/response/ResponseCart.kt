@@ -4,4 +4,7 @@ data class ResponseCart(
     val product : ResponseProductItem,
     val quantity :Int,
 //    val
-    )
+) {
+//    constructor() : this(ResponseProductItem(), 2)
+//    constructor() :
+}

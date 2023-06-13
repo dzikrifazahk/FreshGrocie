@@ -18,6 +18,8 @@ import com.bangkit.freshgrocie.R
 import com.bangkit.freshgrocie.StoreAdapterHome
 import com.bangkit.freshgrocie.databinding.FragmentHomeBinding
 import com.bangkit.freshgrocie.ui.DetailProductActivity
+import com.bangkit.freshgrocie.ui.MapsActivity
+import com.bangkit.freshgrocie.ui.PickLocationActivity
 import com.bangkit.freshgrocie.viewmodel.HomeViewModel
 import com.bangkit.freshgrocie.viewmodel.HomeViewModelFactory
 import com.bangkit.freshgrocie.viewmodel.StoreViewModel
@@ -89,7 +91,12 @@ class HomeFragment : Fragment() {
                     startActivity(Intent(context, ChartActivity::class.java))
                     Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
                 }
-                binding.elevatedButton.setOnClickListener {
+                binding.nearLocationButton.setOnClickListener {
+                    startActivity(Intent(context, PickLocationActivity::class.java))
+                    Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
+                }
+                binding.allLocation.setOnClickListener {
+                    startActivity(Intent(context, MapsActivity::class.java))
                     Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
                 }
             }

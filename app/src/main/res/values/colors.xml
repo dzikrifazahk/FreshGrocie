@@ -10,6 +10,7 @@
     <color name="dark_blue">#405467</color>
 
     <color name="semi_transparent_color">#BE98A354</color>
+    <color name="white_500">#F1F6F9</color>
     <!-- google's material design colors from
      http://www.google.com/design/spec/style/color.html#color-ui-color-palette -->
     <!--base color-->
@@ -19,6 +20,8 @@
     <color name="md_fc_gray">#989899</color>
     <color name="md_fc_yellow">#F9CC56</color>
     <color name="md_fc_graylight">#C5C5C7</color>
+    <color name="buttonColor">#6A7073</color>
+    <color name="wordColor">#494242</color>
     <!--reds-->
     <color name="md_red_50">#FFEBEE</color>
     <color name="md_red_100">#FFCDD2</color>

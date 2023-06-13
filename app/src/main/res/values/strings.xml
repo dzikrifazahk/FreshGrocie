@@ -21,6 +21,14 @@
     <string name="back">SKIP</string>
     <string name="getting_started">Getting Started</string>
 
+
+    <string name="locationNotFound">Location is not found. Try Again</string>
+    <string name="useThisLocation">Use this location?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="start_point">Start Point</string>
+
+
     <string-array name="Languages">
         <item>Indonesia</item>
         <item>English</item>
@@ -104,6 +112,7 @@
     <string name="text_compeleted">Completed</string>
     <string name="text_canceled">Canceled</string>
     <string name="your_web_client_id">1001</string>
+    <string name="title_activity_maps">MapsActivity</string>
 
 
 </resources>
