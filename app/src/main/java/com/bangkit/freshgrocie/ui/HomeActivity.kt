@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.bangkit.freshgrocie.R
 import com.bangkit.freshgrocie.databinding.ActivityHomeBinding
+import com.bangkit.freshgrocie.fragment.ChatFragment
 import com.bangkit.freshgrocie.fragment.HomeFragment
 import com.bangkit.freshgrocie.fragment.ProfileFragment
 import com.bangkit.freshgrocie.fragment.StoreFragment
@@ -38,6 +39,10 @@ class HomeActivity : AppCompatActivity() {
                 R.id.itemStore -> {
                     val fragment = StoreFragment()
                     openFragment(fragment)
+                }
+                R.id.itemChat -> {
+                val fragment = ChatFragment()
+                openFragment(fragment)
                 }
                 R.id.itemProfile -> {
                     val fragment = ProfileFragment()

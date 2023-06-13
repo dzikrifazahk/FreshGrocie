@@ -62,10 +62,11 @@ class HomeAdapter(private val listproduct: List<ResponseProductItem>) :
 
     class ViewHolder(binding: ItemProductBinding) : RecyclerView.ViewHolder(binding.root) {
         val titleTextView: TextView = binding.titleTextView
-//        val typeUser: TextView = view.findViewById(R.id.tv_item_description)
+        val productPrice: TextView = binding.titleDescription
         val avatarImageView: ImageView = binding.imageView
         fun bind(item: ResponseProductItem){
             titleTextView.text = item.productName
+            productPrice.text = ("Rp. "+item.productUnitPrice.toString())
             Glide.with(itemView.context)
                 .load(item.productPhoto)
                 .override(200,150)

@@ -8,6 +8,15 @@ data class ResponseStores(
 	val responseStores: List<ResponseStoresItem>? = null
 )
 
+data class Marker(
+
+	@field:SerializedName("_longitude")
+	val longitude: Int,
+
+	@field:SerializedName("_latitude")
+	val latitude: Int
+)
+
 data class ResponseStoresItem(
 
 	@field:SerializedName("store_product")
@@ -29,5 +38,8 @@ data class ResponseStoresItem(
 	val storeLocation: String? = null,
 
 	@field:SerializedName("store_description")
-	val storeDescription: String? = null
+	val storeDescription: String? = null,
+
+	@field:SerializedName("marker")
+	val marker: Marker,
 )

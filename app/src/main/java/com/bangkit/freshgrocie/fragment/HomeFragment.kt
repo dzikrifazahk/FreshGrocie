@@ -1,5 +1,6 @@
 package com.bangkit.freshgrocie.fragment
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,6 +26,7 @@ import com.bangkit.freshgrocie.viewmodel.HomeViewModel
 import com.bangkit.freshgrocie.viewmodel.HomeViewModelFactory
 import com.bangkit.freshgrocie.viewmodel.StoreViewModel
 import com.bangkit.freshgrocie.viewmodel.StoreViewModelFactory
+import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -35,6 +38,7 @@ import de.hdodenhof.circleimageview.CircleImageView
 class HomeFragment : Fragment() {
 
     private lateinit var binding : FragmentHomeBinding
+    private var latlng: LatLng? = null
     
     private val viewModel by viewModels<HomeViewModel> {
         HomeViewModelFactory.getInstance(requireActivity())
@@ -59,6 +63,19 @@ class HomeFragment : Fragment() {
         var db = FirebaseFirestore.getInstance()
         val user = Firebase.auth.currentUser
 
+        val resultLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    result.data?.let { data ->
+                        val address = data.getStringExtra("address")
+                        val lat = data.getDoubleExtra("lat", 0.0)
+                        val lng = data.getDoubleExtra("lng", 0.0)
+                        latlng = LatLng(lat, lng)
+
+                        binding.detailLocation.text = address
+                    }
+                }
+            }
 
         if (user != null) {
             val docRef: DocumentReference = db.collection("users").document(user.uid)
@@ -92,7 +109,10 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
                 }
                 binding.nearLocationButton.setOnClickListener {
-                    startActivity(Intent(context, PickLocationActivity::class.java))
+//                    startActivity(Intent(context, PickLocationActivity::class.java))
+
+                    val intent = Intent(context, PickLocationActivity::class.java)
+                    resultLauncher.launch(intent)
                     Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
                 }
                 binding.allLocation.setOnClickListener {
@@ -136,6 +156,8 @@ class HomeFragment : Fragment() {
                 }
 
             }
+
+
 
             return binding.root
 

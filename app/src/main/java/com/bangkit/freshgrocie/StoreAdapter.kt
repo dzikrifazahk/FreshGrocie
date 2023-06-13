@@ -37,11 +37,11 @@ class StoreAdapter(private val listproduct: List<ResponseStoresItem>) :
 
     class ViewHolder(binding: ItemStoreBinding) : RecyclerView.ViewHolder(binding.root) {
         val titleTextView: TextView = binding.titleTextView
-
-        //        val typeUser: TextView = view.findViewById(R.id.tv_item_description)
+        val storeLocation: TextView = binding.titleDescription
         val avatarImageView: ImageView = binding.imageView
         fun bind(item: ResponseStoresItem) {
             titleTextView.text = item.storeName
+            storeLocation.text = item.storeLocation
             Glide.with(itemView.context)
                 .load(item.storePhoto)
                 .override(200, 150)

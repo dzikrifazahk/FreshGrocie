@@ -215,6 +215,28 @@
                 android:layout_height="60dp"
                 android:text="Find Your Location"
                 app:layout_constraintTop_toBottomOf="@id/searchBar"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/imageLocation"
+                    android:layout_width="37dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/baseline_location_on_24" />
+
+                <TextView
+                    android:id="@+id/detailLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Your Location" />
+
+            </LinearLayout>
+
             <TextView
                 style="@style/Subtitle.Normal"
                 android:id="@+id/title_home_row1"
