@@ -27,6 +27,16 @@ const orderedFields = {
     "user_photo",
     "chart",
   ],
+  chart: [
+    "product_id",
+    "product_name",
+    "product_unit_price",
+    "product_rating",
+    "product_description",
+    "quantity",
+    "payment_method",
+    "total_price",
+  ],
   store: [
     "store_name",
     "store_product",
@@ -39,8 +49,8 @@ const orderedFields = {
     "marker",
   ],
   transaction: [
-    "id_user",
-    "id_product",
+    "user_id",
+    "product_id",
     "transaction_date",
     "product_unit_price",
     "total_product",

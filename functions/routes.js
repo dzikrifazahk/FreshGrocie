@@ -1,10 +1,13 @@
 const express = require("express");
+const admin = require("firebase-admin");
+const axios = require("axios");
+const Multer = require("multer");
+const moment = require("moment");
+
 // eslint-disable-next-line new-cap
 const router = express.Router();
-const axios = require("axios");
+
 const {db, orderedFields, orderFields} = require("./database");
-const admin = require("firebase-admin");
-const Multer = require("multer");
 const imgUpload = require("./imgUpload");
 
 const apiKey = "eyJhbGciOiJSUzI1NiIsImtpZCI6IjVGQUQ4RTE5MjMwOURFRUJCNzBCMzU5M0E2MDU3OUFEMUM5NjgzNDkiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJYNjJPR1NNSjN1dTNDeldUcGdWNXJSeVdnMGsifQ.eyJuYmYiOjE2ODU5NTMyNzIsImV4cCI6MTY4NjAzOTY3MiwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjoicHJlbWllciIsImNsaWVudF9pZCI6IjQ3NTM2ZTZkZGRhZDQwMjlhNTM4MDNlNjQ3ZjYxN2ExIiwic2NvcGUiOlsicHJlbWllciJdfQ.B2GXPihvzK_-WBIVgp9V44hTQiYfpkmCoLqjQCFEYzALLVQSN5BLNxEACX4vtCdFt1AadhZD7xAZY2KRVg4ZNDXCDC7RzhqY5BM8D4Yuvv4kYDp7FxZf9y_0CKh0CrkfBUUetNYx0MSnw7pRLmwMray7UdfQCgHcqj4cx2UN70iaAZsy5kgdVYs8niGMGbP-tC9V3GefvOBvCsHUepmF6sOa1S4el_sDtzd7WiTWtS2TlKBkb3BO8_9dNxjiO9MPHr-Lug83qpmLq1UMjUE_obdqUNNmYqYxRdJpsaw3B04jOETfiF2dan-4LbSo8rFXm-fwIU_bdOAlBG3RgfA13A";
@@ -16,17 +19,38 @@ const multer = Multer({
 });
 
 router.get("/users", async (req, res) => {
-  const snapshot = await db.collection("users").get();
+  try {
+    const snapshot = await db.collection("users").get();
 
-  const users = [];
-  snapshot.forEach((doc) => {
-    const id = doc.id;
-    const data = doc.data();
-    const orderedData = orderFields(data, orderedFields.user);
+    const users = await Promise.all(
+        snapshot.docs.map(async (doc) => {
+          const userId = doc.id;
+          const userData = doc.data();
 
-    users.push({id, ...orderedData});
-  });
-  res.status(200).send(JSON.stringify(users));
+          const chartSnapshot = await doc.ref.collection("chart").get();
+          const chartData = chartSnapshot.empty ? [] : chartSnapshot.docs.map((chartDoc) => chartDoc.data());
+          const orderedChartData = chartData.map((chartItem) =>
+            orderFields(chartItem, orderedFields.chart),
+          );
+
+
+          const transactionSnapshot = await doc.ref.collection("transaction").get();
+          const transactionData = transactionSnapshot.empty ? [] : transactionSnapshot.docs.map((transactionDoc) => transactionDoc.data());
+          const orderedTransactionData = transactionData.map((transactionItem) =>
+            orderFields(transactionItem, orderedFields.transaction),
+          );
+
+          const orderedData = orderFields(userData, orderedFields.user);
+          const userWithChart = {id: userId, ...orderedData, chart: orderedChartData, transaction: orderedTransactionData};
+
+          return userWithChart;
+        }),
+    );
+    res.status(200).send(JSON.stringify(users));
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    res.status(500).json({error: "Failed to fetch users"});
+  }
 });
 
 router.get("/stores", async (req, res) => {
@@ -275,7 +299,6 @@ router.post("/transaction", async (req, res) => {
   const {
     id_user,
     id_product,
-    transaction_date,
     product_unit_price,
     total_product,
     payment_method,
@@ -284,6 +307,7 @@ router.post("/transaction", async (req, res) => {
     transaction_notes,
   } = req.body;
 
+  const transaction_date = moment().format("YYYY-MM-DD HH:mm:ss");
   const total_price = product_unit_price * total_product;
 
   try {
@@ -403,8 +427,8 @@ router.delete("/transaction/:id", async (req, res) => {
   }
 });
 
-// Adding Chart Feature
-router.post("/users/:userId/chart", async (req, res) => {
+// Adding Chart & Transaction collection inside users collection
+router.post("/user/:userId/chart", async (req, res) => {
   try {
     const userId = req.params.userId;
     const {product_id, quantity, payment_method} = req.body;
@@ -425,6 +449,7 @@ router.post("/users/:userId/chart", async (req, res) => {
       product_id,
       product_name: productData.product_name,
       product_unit_price: productData.product_unit_price,
+      product_rating: productData.product_rating,
       product_description: productData.product_description,
       quantity,
       payment_method,
@@ -440,7 +465,7 @@ router.post("/users/:userId/chart", async (req, res) => {
   }
 });
 
-router.get("/users/:userId/chart", async (req, res) => {
+router.get("/user/:userId/chart", async (req, res) => {
   try {
     const userId = req.params.userId;
 
@@ -451,14 +476,85 @@ router.get("/users/:userId/chart", async (req, res) => {
     chartQuerySnapshot.forEach((doc) => {
       chartData.push(doc.data());
     });
+    const orderedChartData = chartData.map((chartItem) =>
+      orderFields(chartItem, orderedFields.chart),
+    );
 
-    return res.status(200).json(chartData);
+    return res.status(200).json(orderedChartData);
   } catch (error) {
     console.error("Error fetching chart data:", error);
     return res.status(500).json({error: "Failed to fetch chart data"});
   }
 });
 
+router.post("/user/:userId/transaction", async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const {
+      product_id,
+      quantity,
+      payment_method,
+      transaction_status,
+      shipping_address,
+      transaction_notes,
+    } = req.body;
+
+    const productDoc = await db.collection("products").doc(product_id).get();
+    if (!productDoc.exists) {
+      return res.status(404).send("Product not found");
+    }
+
+    const productData = productDoc.data();
+    const unitPrice = productData.product_unit_price;
+    const totalPrice = unitPrice * quantity;
+    // Create a new chart document
+    const userRef = db.collection("users").doc(userId);
+    const transactionRef = userRef.collection("transaction").doc();
+
+    const transactionData = {
+      user_id: userId,
+      product_id,
+      product_name: productData.product_name,
+      product_unit_price: productData.product_unit_price,
+      product_description: productData.product_description,
+      quantity,
+      payment_method,
+      total_price: totalPrice,
+      transaction_status,
+      shipping_address,
+      transaction_notes,
+    };
+
+    await transactionRef.set(transactionData);
+
+    return res.status(201).json({message: "transaction created successfully"});
+  } catch (error) {
+    console.error("Error creating transaction:", error);
+    return res.status(500).json({error: "Failed to create transaction"});
+  }
+});
+
+router.get("/user/:userId/transaction", async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    const userRef = db.collection("users").doc(userId);
+    const transactionQuerySnapshot = await userRef.collection("transaction").get();
+
+    const transactionData = [];
+    transactionQuerySnapshot.forEach((doc) => {
+      transactionData.push(doc.data());
+    });
+    const orderedTransactionData = transactionData.map((transactionItem) =>
+      orderFields(transactionItem, orderedFields.transaction),
+    );
+
+    return res.status(200).json(orderedTransactionData);
+  } catch (error) {
+    console.error("Error fetching transaction data:", error);
+    return res.status(500).json({error: "Failed to fetch transaction data"});
+  }
+});
 
 // Accessing fatsecret API
 router.get("/fatsecret/product/:id", async (req, res) => {
