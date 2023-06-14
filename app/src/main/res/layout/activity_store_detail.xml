@@ -34,9 +34,15 @@
                         android:src="@drawable/baseline_arrow_back_24"
                         android:background="@android:color/transparent"/>
                     <TextView
+                        android:id="@+id/d_store_name"
                         android:fontFamily="@font/urbanist_black"
                         android:layout_marginLeft="10dp"
-                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit ="marquee_forever"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:layout_width="320dp"
                         android:layout_height="wrap_content"
                         android:textSize="24dp"
                         android:text="Store"/>

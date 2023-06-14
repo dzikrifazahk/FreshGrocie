@@ -11,16 +11,20 @@ import android.widget.Toast
 import com.bangkit.freshgrocie.GVStoreProductAdapter
 import com.bangkit.freshgrocie.PhotoboothAdapter
 import com.bangkit.freshgrocie.R
+import com.bangkit.freshgrocie.databinding.ActivityHomeBinding
+import com.bangkit.freshgrocie.databinding.ActivityStoreDetailBinding
 import com.bangkit.freshgrocie.viewmodel.GVStoreProduct
 import com.smarteist.autoimageslider.SliderView
 
 class StoreDetailActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityStoreDetailBinding
     lateinit var imageUrl: ArrayList<String>
     lateinit var sliderView: SliderView
     lateinit var sliderAdapter: PhotoboothAdapter
     lateinit var courseGRV: GridView
     lateinit var courseList: List<GVStoreProduct>
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityStoreDetailBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_store_detail)
 

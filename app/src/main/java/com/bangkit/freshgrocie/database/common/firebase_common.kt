@@ -1,4 +1,4 @@
-//package com.bangkit.freshgrocie.database.common
+package com.bangkit.freshgrocie.database.common//package com.bangkit.freshgrocie.database.common
 //
 //import android.util.Log
 //import com.google.android.gms.tasks.Task
