@@ -2,6 +2,7 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
+    "dev": "node app.js",
     "lint": "eslint .",
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
@@ -12,10 +13,11 @@
   "engines": {
     "node": "18"
   },
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "firebase-admin": "^11.8.0",
-    "firebase-functions": "^4.3.1"
+    "firebase-functions": "^4.3.1",
+    "nodemon": "^2.0.22"
   },
   "devDependencies": {
     "eslint": "^8.15.0",
