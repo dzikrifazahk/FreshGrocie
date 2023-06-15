@@ -23,33 +23,42 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/urbanist_black"
-                android:text="Camera Detection"
+                android:text="Freshness Detection"
                 android:textSize="17dp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.camera.view.PreviewView
+        android:id="@+id/preview"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:id="@+id/preview"
         app:layout_constraintBottom_toTopOf="@+id/content"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
 
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/camera_layout"
+        app:layout_constraintBottom_toBottomOf="@+id/content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#D4D5D2"
+        android:layout_height="180dp"
         android:gravity="center_horizontal"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/preview">
+        >
+
 
         <TextView
             android:id="@+id/titleView"
@@ -68,23 +77,69 @@
             app:layout_constraintTop_toBottomOf="@+id/preview"
             app:layout_constraintVertical_bias="0.16000003" />
 
-    </LinearLayout>
-    <TextView
-        android:id="@+id/predictedTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="15dp"
-        android:text="hello"
-        android:textColor="@android:color/background_dark"
-        android:textSize="15dp"
-        android:fontFamily="@font/urbanist"
-        android:layout_marginTop="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/preview"
-        app:layout_constraintVertical_bias="0.16000003" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left">
 
+            <TextView
+                android:id="@+id/predictedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:text="hello"
+                android:textStyle="bold"
+                android:textColor="@android:color/background_dark"
+                android:textSize="15dp"
+                android:fontFamily="@font/urbanist_main"
+                android:layout_marginTop="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/preview"
+                app:layout_constraintVertical_bias="0.16000003" />
+
+            <RelativeLayout
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:rotationY="-28"
+                    android:src="@drawable/showing_support" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            >
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSeeNutrition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                app:cornerRadius="8dp"
+                android:textColor="@color/white_500"
+                android:text="See Nutrition">
+            </com.google.android.material.button.MaterialButton>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMakeAFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cornerRadius="8dp"
+                android:textColor="@color/white_500"
+                android:text="Make Some Food">
+            </com.google.android.material.button.MaterialButton>
+
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

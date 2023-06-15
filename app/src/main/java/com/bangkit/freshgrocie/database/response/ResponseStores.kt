@@ -82,7 +82,7 @@ data class ResponseStoresItem(
 	parcel.readString() ?: "",
 	parcel.readString() ?: "",
 	parcel.readString() ?: "",
-		//parcel.readParcelable()?:""
+//		parcel.readParcelable()?:""
 	) {
 	}
 

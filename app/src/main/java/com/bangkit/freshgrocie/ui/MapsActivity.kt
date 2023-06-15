@@ -8,7 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.bangkit.freshgrocie.R
-import com.bangkit.freshgrocie.database.response.Marker
+//import com.bangkit.freshgrocie.database.response.Marker
 import com.bangkit.freshgrocie.databinding.ActivityMapsBinding
 import com.bangkit.freshgrocie.helper.LocationConverter
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -58,31 +58,31 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
 
-    private fun setMarker(data: List<Marker>) {
-        lateinit var locationZoom: LatLng
-        data.forEach {
-            if (it.latitude != null && it.longitude != null) {
-                val latLng = LatLng(it.latitude.toDouble(), it.longitude.toDouble())
-                val address = LocationConverter.getStringAddress(latLng, this)
-                val marker = mMap.addMarker(
-                    MarkerOptions()
-                        .position(latLng)
-                        //                        .title(it.name)
-                        .snippet(address)
-                )
-                boundBuilder.include(latLng)
-                marker?.tag = it
-
-                locationZoom = latLng
-            }
-        }
-
-        mMap.animateCamera(
-            CameraUpdateFactory.newLatLngZoom(
-                locationZoom, 3f
-            )
-        )
-    }
+//    private fun setMarker(data: List<Marker>) {
+//        lateinit var locationZoom: LatLng
+//        data.forEach {
+//            if (it.latitude != null && it.longitude != null) {
+//                val latLng = LatLng(it.latitude.toDouble(), it.longitude.toDouble())
+//                val address = LocationConverter.getStringAddress(latLng, this)
+//                val marker = mMap.addMarker(
+//                    MarkerOptions()
+//                        .position(latLng)
+//                        //                        .title(it.name)
+//                        .snippet(address)
+//                )
+//                boundBuilder.include(latLng)
+//                marker?.tag = it
+//
+//                locationZoom = latLng
+//            }
+//        }
+//
+//        mMap.animateCamera(
+//            CameraUpdateFactory.newLatLngZoom(
+//                locationZoom, 3f
+//            )
+//        )
+//    }
 
     override fun onMapReady(googleMap: GoogleMap) {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

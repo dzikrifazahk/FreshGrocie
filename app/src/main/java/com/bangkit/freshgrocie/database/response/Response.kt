@@ -22,8 +22,8 @@ data class ResponseItem(
 	@field:SerializedName("store_photo")
 	val storePhoto: String,
 
-	@field:SerializedName("marker")
-	val marker: Marker,
+//	@field:SerializedName("marker")
+//	val marker: Marker,
 
 	@field:SerializedName("store_name")
 	val storeName: String,

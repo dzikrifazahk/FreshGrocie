@@ -135,9 +135,10 @@ class HomeFragment : Fragment() {
                 )
                 binding.carouselRecyclerView.setHasFixedSize(true);
                 binding.carouselRecyclerView.adapter = adapter
+
                 adapter.onItemClick = {
                     val intent = Intent(context, StoreDetailActivity::class.java)
-                    intent.putExtra("products", it)
+                    intent.putExtra("stores", it)
                     startActivity(intent)
                 }
             }

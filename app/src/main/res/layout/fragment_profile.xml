@@ -52,6 +52,7 @@
             app:civ_border_width="2dp" />
 
         <TextView
+            android:id="@+id/tvNameProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/urbanist_black"
@@ -59,6 +60,7 @@
             android:textSize="23dp" />
 
         <TextView
+            android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

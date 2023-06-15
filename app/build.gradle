@@ -9,14 +9,14 @@ plugins {
 android {
     signingConfigs {
         debug {
-            storeFile file('C:\\Users\\Filemon Sitanggang\\AndroidStudioProjects\\FreshGrocie\\KEYSTORE\\keystore')
+            storeFile file('/Users/user/Documents/project/bangkit/KEYSTORE/keystore')
             storePassword '!freshgrocie'
             keyPassword '!freshgrocie'
             keyAlias 'keyapp'
         }
     }
     namespace 'com.bangkit.freshgrocie'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.bangkit.freshgrocie"
