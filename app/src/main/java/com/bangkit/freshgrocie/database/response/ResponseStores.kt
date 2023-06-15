@@ -1,21 +1,52 @@
 package com.bangkit.freshgrocie.database.response
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 data class ResponseStores(
 
 	@field:SerializedName("ResponseStores")
-	val responseStores: List<ResponseStoresItem>? = null
+	val responseStore: List<ResponseStoresItem>
+	//val responseStores: List<Marker.ResponseStoresItem>? = null
 )
 
-data class Marker(
-
-	@field:SerializedName("_longitude")
-	val longitude: Int,
-
-	@field:SerializedName("_latitude")
-	val latitude: Int
-)
+//data class Marker(
+//
+//	@field:SerializedName("_longitude")
+//	val longitude: String? = null,
+//
+//	@field:SerializedName("_latitude")
+//	val latitude: String? = null
+//): Parcelable {
+//	constructor(parcel: Parcel) : this(
+//		parcel.readString() ?: "",
+//		parcel.readString() ?: ""
+//
+//
+//	) {
+//	}
+//
+//	override fun writeToParcel(parcel: Parcel, flags: Int) {
+//
+//		parcel.writeString(latitude)
+//		parcel.writeString(longitude)
+//
+//	}
+//
+//	override fun describeContents(): Int {
+//		return 0
+//	}
+//
+//	companion object CREATOR : Parcelable.Creator<Marker> {
+//		override fun createFromParcel(parcel: Parcel): Marker {
+//			return Marker(parcel)
+//		}
+//
+//		override fun newArray(size: Int): Array<Marker?> {
+//			return arrayOfNulls(size)
+//		}
+//	}
 
 data class ResponseStoresItem(
 
@@ -40,6 +71,44 @@ data class ResponseStoresItem(
 	@field:SerializedName("store_description")
 	val storeDescription: String? = null,
 
-	@field:SerializedName("marker")
-	val marker: Marker,
-)
+//	@field:SerializedName("marker")
+//	val marker: String,
+) : Parcelable {
+	constructor(parcel: Parcel) : this(
+	parcel.readString() ?: "",
+		parcel.readString() ?: "",
+		parcel.readString() ?: "",
+	parcel.readString() ?: "",
+	parcel.readString() ?: "",
+	parcel.readString() ?: "",
+	parcel.readString() ?: "",
+		//parcel.readParcelable()?:""
+	) {
+	}
+
+	override fun writeToParcel(parcel: Parcel, flags: Int) {
+		parcel.writeString(id)
+		parcel.writeValue(storeAddress)
+		parcel.writeValue(storeDescription)
+		parcel.writeString(storeLocation)
+		parcel.writeString(storeProduct)
+		parcel.writeString(storePhoto)
+		parcel.writeString(storeName)
+		// show case photobooth
+	// parcel.writeArray(storePhoto)
+	}
+
+	override fun describeContents(): Int {
+		return 0
+	}
+
+	companion object CREATOR : Parcelable.Creator<ResponseStoresItem> {
+		override fun createFromParcel(parcel: Parcel): ResponseStoresItem {
+			return ResponseStoresItem(parcel)
+		}
+
+		override fun newArray(size: Int): Array<ResponseStoresItem?> {
+			return arrayOfNulls(size)
+		}
+	}
+}

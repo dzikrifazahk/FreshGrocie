@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bangkit.freshgrocie.database.response.ResponseProductItem
 import com.bangkit.freshgrocie.database.response.ResponseStoresItem
 import com.bangkit.freshgrocie.databinding.ItemCarouselBinding
 import com.bangkit.freshgrocie.databinding.ItemProductBinding
@@ -15,7 +16,7 @@ class StoreAdapterHome(private val listproduct: List<ResponseStoresItem>) :
     RecyclerView.Adapter<StoreAdapterHome.ViewHolder>() {
 
     private var onItemClickCallback: OnItemClickCallback? = null
-
+    var onItemClick: ((ResponseStoresItem) -> Unit)? = null
     fun setOnItemClickCallback(callback: OnItemClickCallback) {
         onItemClickCallback = callback
     }
@@ -30,6 +31,11 @@ class StoreAdapterHome(private val listproduct: List<ResponseStoresItem>) :
         val product = listproduct[position]
         if (product != null) {
             viewHolder.bind(product)
+            viewHolder.itemView.setOnClickListener {
+                onItemClick?.invoke(product)
+
+//                Log.e("Berhasil", "Berhasil")
+            }
         }
     }
 

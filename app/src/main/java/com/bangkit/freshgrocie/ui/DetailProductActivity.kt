@@ -13,9 +13,6 @@ import com.squareup.picasso.Picasso
 
 
 class DetailProductActivity : AppCompatActivity() {
-    //    lateinit var imageUrl: ArrayList<String>
-//    lateinit var sliderView: SliderView
-//    lateinit var sliderAdapter: PhotoboothAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_product)

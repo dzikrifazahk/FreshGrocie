@@ -16,7 +16,7 @@ android {
         }
     }
     namespace 'com.bangkit.freshgrocie'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.bangkit.freshgrocie"
@@ -29,6 +29,7 @@ android {
         signingConfig signingConfigs.debug
     }
     buildFeatures {
+        buildConfig = true
         viewBinding true
     }
 

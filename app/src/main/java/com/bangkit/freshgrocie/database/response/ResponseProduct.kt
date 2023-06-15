@@ -42,6 +42,7 @@ data class ResponseProductItem(
 		parcel.readString() ?: "",
 		parcel.readValue(Double::class.java.classLoader) as? Double,
 		parcel.readString() ?: ""
+
 	) {
 	}
 

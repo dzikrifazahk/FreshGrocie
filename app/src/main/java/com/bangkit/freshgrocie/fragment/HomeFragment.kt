@@ -22,6 +22,7 @@ import com.bangkit.freshgrocie.databinding.FragmentHomeBinding
 import com.bangkit.freshgrocie.ui.DetailProductActivity
 import com.bangkit.freshgrocie.ui.MapsActivity
 import com.bangkit.freshgrocie.ui.PickLocationActivity
+import com.bangkit.freshgrocie.ui.StoreDetailActivity
 import com.bangkit.freshgrocie.viewmodel.HomeViewModel
 import com.bangkit.freshgrocie.viewmodel.HomeViewModelFactory
 import com.bangkit.freshgrocie.viewmodel.StoreViewModel
@@ -133,8 +134,12 @@ class HomeFragment : Fragment() {
                     )
                 )
                 binding.carouselRecyclerView.setHasFixedSize(true);
-                binding.carouselRecyclerView.adapter = StoreAdapterHome(list)
-                getActivity()?.getViewModelStore()?.clear();
+                binding.carouselRecyclerView.adapter = adapter
+                adapter.onItemClick = {
+                    val intent = Intent(context, StoreDetailActivity::class.java)
+                    intent.putExtra("products", it)
+                    startActivity(intent)
+                }
             }
 
             //PRODUCT
