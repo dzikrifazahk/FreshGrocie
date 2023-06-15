@@ -1,21 +1,17 @@
+// Initializing configuration for using firestore
+
 const admin = require("firebase-admin");
+process.env.GOOGLE_APPLICATION_CREDENTIALS = "../freshgrocie-capstone-firebase-adminsdk-jf6qi-d9860d926f.json";
+const serviceAccount = require(process.env.GOOGLE_APPLICATION_CREDENTIALS);
 
 admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
   ignoreUndefinedProperties: true,
 });
 
 const db = admin.firestore();
 
 const orderedFields = {
-  product: [
-    "product_name",
-    "product_category",
-    "product_stock",
-    "product_unit_price",
-    "product_rating",
-    "product_description",
-    "product_photo",
-  ],
   user: [
     "user_name",
     "user_email",
@@ -36,6 +32,16 @@ const orderedFields = {
     "quantity",
     "payment_method",
     "total_price",
+  ],
+  product: [
+    "product_name",
+    "product_category",
+    "product_stock",
+    "product_unit_price",
+    "product_rating",
+    "product_description",
+    "product_photo",
+    "product_imageUrl",
   ],
   store: [
     "store_name",

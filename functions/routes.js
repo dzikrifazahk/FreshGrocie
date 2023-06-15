@@ -1,23 +1,26 @@
+// Routing configuration
+
+/* eslint-disable new-cap */
 const express = require("express");
 const admin = require("firebase-admin");
 const axios = require("axios");
 const Multer = require("multer");
 const moment = require("moment");
 
-// eslint-disable-next-line new-cap
 const router = express.Router();
 
 const {db, orderedFields, orderFields} = require("./database");
 const imgUpload = require("./imgUpload");
 
+// API key renew every 24 hours
 const apiKey = "eyJhbGciOiJSUzI1NiIsImtpZCI6IjVGQUQ4RTE5MjMwOURFRUJCNzBCMzU5M0E2MDU3OUFEMUM5NjgzNDkiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJYNjJPR1NNSjN1dTNDeldUcGdWNXJSeVdnMGsifQ.eyJuYmYiOjE2ODU5NTMyNzIsImV4cCI6MTY4NjAzOTY3MiwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5mYXRzZWNyZXQuY29tIiwiYXVkIjoicHJlbWllciIsImNsaWVudF9pZCI6IjQ3NTM2ZTZkZGRhZDQwMjlhNTM4MDNlNjQ3ZjYxN2ExIiwic2NvcGUiOlsicHJlbWllciJdfQ.B2GXPihvzK_-WBIVgp9V44hTQiYfpkmCoLqjQCFEYzALLVQSN5BLNxEACX4vtCdFt1AadhZD7xAZY2KRVg4ZNDXCDC7RzhqY5BM8D4Yuvv4kYDp7FxZf9y_0CKh0CrkfBUUetNYx0MSnw7pRLmwMray7UdfQCgHcqj4cx2UN70iaAZsy5kgdVYs8niGMGbP-tC9V3GefvOBvCsHUepmF6sOa1S4el_sDtzd7WiTWtS2TlKBkb3BO8_9dNxjiO9MPHr-Lug83qpmLq1UMjUE_obdqUNNmYqYxRdJpsaw3B04jOETfiF2dan-4LbSo8rFXm-fwIU_bdOAlBG3RgfA13A";
 
-// eslint-disable-next-line new-cap
 const multer = Multer({
   storage: Multer.MemoryStorage,
   fileSize: 5 * 1024 * 1024,
 });
 
+// All the main route
 router.get("/users", async (req, res) => {
   try {
     const snapshot = await db.collection("users").get();
@@ -194,7 +197,7 @@ router.get("/transaction/:id", async (req, res) => {
   }
 });
 
-router.post("/user", multer.single("photo"), imgUpload.uploadToGcs, async (req, res) => {
+router.post("/user", multer.single("photo"), imgUpload.uploadToGcs("Users"), async (req, res) => {
   const {
     user_name,
     user_email,
@@ -204,7 +207,6 @@ router.post("/user", multer.single("photo"), imgUpload.uploadToGcs, async (req, 
     user_role,
   } = req.body;
 
-  // eslint-disable-next-line no-var
   let user_imageUrl = "";
 
   if (req.file && req.file.cloudStoragePublicUrl) {
@@ -229,7 +231,7 @@ router.post("/user", multer.single("photo"), imgUpload.uploadToGcs, async (req, 
   }
 });
 
-router.post("/store", multer.single("photo"), imgUpload.uploadToGcs, async (req, res) => {
+router.post("/store", multer.single("photo"), imgUpload.uploadToGcs("Stores"), async (req, res) => {
   const {
     store_name,
     store_product,
@@ -261,7 +263,7 @@ router.post("/store", multer.single("photo"), imgUpload.uploadToGcs, async (req,
   }
 });
 
-router.post("/product", multer.single("photo"), imgUpload.uploadToGcs, async (req, res) => {
+router.post("/product", multer.single("photo"), imgUpload.uploadToGcs("Products"), async (req, res) => {
   const {
     product_name,
     product_unit_price,
@@ -441,7 +443,7 @@ router.post("/user/:userId/chart", async (req, res) => {
     const productData = productDoc.data();
     const unitPrice = productData.product_unit_price;
     const totalPrice = unitPrice * quantity;
-    // Create a new chart document
+
     const userRef = db.collection("users").doc(userId);
     const chartRef = userRef.collection("chart").doc();
 
@@ -507,7 +509,7 @@ router.post("/user/:userId/transaction", async (req, res) => {
     const productData = productDoc.data();
     const unitPrice = productData.product_unit_price;
     const totalPrice = unitPrice * quantity;
-    // Create a new chart document
+
     const userRef = db.collection("users").doc(userId);
     const transactionRef = userRef.collection("transaction").doc();
 
@@ -556,7 +558,7 @@ router.get("/user/:userId/transaction", async (req, res) => {
   }
 });
 
-// Accessing fatsecret API
+// Accessing fatsecret API (Testing)
 router.get("/fatsecret/product/:id", async (req, res) => {
   const foodId = req.params.id;
   const url = `https://platform.fatsecret.com/rest/server.api?method=food.get.v3&food_id=${foodId}&format=json`;
@@ -587,7 +589,6 @@ router.get("/fatsecret/products/:name", async (req, res) => {
   axios
       .get(url, config)
       .then((response) => {
-      // Process the response data
         res.status(200).json(response.data);
       })
       .catch((error) => {
