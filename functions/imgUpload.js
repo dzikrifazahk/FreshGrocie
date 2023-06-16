@@ -9,7 +9,7 @@ const {Storage} = require("@google-cloud/storage");
 const {format} = require("date-fns");
 const path = require("path");
 
-const pathKey = path.resolve("./object_creator.json");
+const pathKey = path.resolve("../storage-object-creator.json");
 
 const gcs = new Storage({
   projectId: "freshgrocie-capstone",

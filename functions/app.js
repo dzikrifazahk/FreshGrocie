@@ -9,9 +9,6 @@ const routes = require("./routes");
 // Defining port number for local testing
 const port = 3000;
 
-// provide firebase service account credential
-process.env.GOOGLE_APPLICATION_CREDENTIALS = "../freshgrocie-capstone-firebase-adminsdk-jf6qi-d9860d926f.json";
-
 // Store express application instance
 const app = express();
 

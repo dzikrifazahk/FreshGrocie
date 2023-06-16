@@ -1,7 +1,7 @@
 // Initializing configuration for using firestore
 
 const admin = require("firebase-admin");
-process.env.GOOGLE_APPLICATION_CREDENTIALS = "../freshgrocie-capstone-firebase-adminsdk-jf6qi-d9860d926f.json";
+process.env.GOOGLE_APPLICATION_CREDENTIALS = "../firebase-adminSDK.json";
 const serviceAccount = require(process.env.GOOGLE_APPLICATION_CREDENTIALS);
 
 admin.initializeApp({
@@ -52,6 +52,7 @@ const orderedFields = {
     "store_location",
     "store_address",
     "store_photo",
+    "store_imageUrl",
     "marker",
   ],
   transaction: [
