@@ -16,10 +16,9 @@ function App() {
       
         <Navbar />
         <Hero />
+        <OurPartner />
         <FeaturedProduct />
         <AppFeature />
-        <AboutUs />
-        <OurPartner />
         <OurTeam />
         <Footer />
        

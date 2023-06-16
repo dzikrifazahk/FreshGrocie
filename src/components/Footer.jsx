@@ -1,157 +1,94 @@
 import React from 'react'
 function Footer() {
     return (
-<div className="relative z-10 bg-green-100 pt-20 pb-10 lg:pt-[120px] lg:pb-20">
-  <div className="p-2 md:mx-[120px]">
-    <div className="-mx-4 flex flex-wrap">
-      <div className="w-full px-4 sm:w-2/3 lg:w-3/12">
-        <div className="mb-10 w-full">
-          <a href="javascript:void(0)" className="mb-6 inline-block max-w-[160px]">
-            <img
-              src="/FG.svg"
-              alt="logo"
-              className="max-w-full"
-            />
-          </a>
-          <p className="text-body-color mb-7 text-base">
-            Sed ut perspiciatis undmnis is iste natus error sit amet voluptatem totam rem aperiam.
-          </p>
-          <p className="text-dark flex items-center text-sm font-medium">
-            <span className="text-primary mr-3"></span>
-            <span>+012 (345) 678 99</span>
-          </p>
-        </div>
+<footer className="bg-white dark:bg-gray-900">
+  <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <div className="md:flex md:justify-between">
+      <div className="mb-6 md:mb-0">
+        <a href="" className="flex items-center">
+          <img
+            src="/FG.svg"
+            className="w-24"
+            alt=""
+          />
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            FreshGrocie
+          </span>
+        </a>
       </div>
-      <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
-        <div className="mb-10 w-full">
-          <h4 className="text-dark mb-9 text-lg font-semibold">Resources</h4>
-          <ul>
-            <li>
-              <a
-                href="javascript:void(0)"
-                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
-              >
-                SaaS Development
+      <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+        <div>
+          <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            FreshGrocie
+          </h2>
+          <ul className="text-gray-600 dark:text-gray-400 font-medium">
+            <li className="mb-4">
+              <a href="https://flowbite.com/" className="hover:underline">
+                Our Partmers
               </a>
             </li>
             <li>
-              <a
-                href="javascript:void(0)"
-                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
-              >
-                Our Products
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
-              >
-                User Flow
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
-              >
-                User Strategy
+              <a href="https://tailwindcss.com/" className="hover:underline">
+                Features
               </a>
             </li>
           </ul>
         </div>
-      </div>
-      <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
-        <div className="mb-10 w-full">
-          <h4 className="text-dark mb-9 text-lg font-semibold">Company</h4>
-          <ul>
-            <li>
+        <div>
+          <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            Follow us
+          </h2>
+          <ul className="text-gray-600 dark:text-gray-400 font-medium">
+            <li className="mb-4">
               <a
-                href="javascript:void(0)"
-                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
+                href="https://github.com/themesberg/flowbite"
+                className="hover:underline"
               >
-                About TailGrids
+                Github
               </a>
             </li>
             <li>
-              <a
-                href="javascript:void(0)"
-                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
-              >
-                Contact & Support
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
-              >
-                Success History
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
-              >
-                Setting & Privacy
+              <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">
+                Discord
               </a>
             </li>
           </ul>
         </div>
-      </div>
-      <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
-        <div className="mb-10 w-full">
-          <h4 className="text-dark mb-9 text-lg font-semibold">Quick Links</h4>
-          <ul>
-            <li>
-              <a
-                href="javascript:void(0)"
-                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
-              >
-                Premium Support
+        <div>
+          <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            Legal
+          </h2>
+          <ul className="text-gray-600 dark:text-gray-400 font-medium">
+            <li className="mb-4">
+              <a href="#" className="hover:underline">
+                Privacy Policy
               </a>
             </li>
             <li>
-              <a
-                href="javascript:void(0)"
-                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
-              >
-                Our Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
-              >
-                Know Our Team
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
-              >
-                Download App
+              <a href="#" className="hover:underline">
+                Terms &amp; Conditions
               </a>
             </li>
           </ul>
-        </div>
-      </div>
-      <div className="w-full px-4 sm:w-1/2 lg:w-3/12">
-        <div className="mb-10 w-full">
-          <h4 className="text-dark mb-9 text-lg font-semibold">Follow Us On</h4>
-          <div className="mb-6 flex items-center"></div>
-          <p className="text-body-color text-base">&copy; 2023 FreshGrocie</p>
         </div>
       </div>
     </div>
+    <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+    <div className="sm:flex sm:items-center sm:justify-between">
+      <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        © 2023{" "}
+        <a href="https://flowbite.com/" className="hover:underline">
+          FreshGrocie™
+        </a>
+        . All Rights Reserved.
+      </span>
+      <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+        
+      </div>
+    </div>
   </div>
-  <div>
-    <span className="absolute top-10 right-10 z-[-1] bg-green-100"></span>
-  </div>
-</div>
+</footer>
+
 
     );
   }
