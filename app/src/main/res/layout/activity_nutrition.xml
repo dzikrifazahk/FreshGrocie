@@ -6,4 +6,300 @@
     android:layout_height="match_parent"
     tools:context=".ui.NutritionActivity">
 
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@drawable/bg_nutrition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout3" />
+
+
+    </LinearLayout>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+            >
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/back_white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/urbanist_black"
+                android:text="Nutrition"
+                android:textSize="15dp"
+                android:textColor="@color/white_500"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    <LinearLayout
+        android:id="@+id/linearTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white_500"
+            android:text="Fresh Banana"
+            android:fontFamily="@font/urbanist_black"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:paddingBottom="15dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearTitle">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/banana2"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share"
+        android:textColor="@color/colorPrimary"
+        app:backgroundTint="@color/white_500"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+        app:strokeColor="@color/white_500" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearImage">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/tvTitleCalori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/urbanist_black"
+                android:text="Calori"
+                android:textColor="@color/white_500"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tvTitleFatness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/urbanist_black"
+                android:text="Fatnes"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textColor="@color/white_500"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tvTitleCarbo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/urbanist_black"
+                android:text="Carbo"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textColor="@color/white_500"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tvTitleProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/urbanist_black"
+                android:text="Protein"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textColor="@color/white_500"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvValueCalori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:fontFamily="@font/urbanist"
+                android:gravity="center"
+                android:text="150 gr"
+                android:textColor="@color/white_500"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tvValueFatness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/urbanist"
+                android:gravity="center"
+                android:text="0,39 gr"
+                android:layout_weight="1"
+                android:textColor="@color/white_500"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tvValueCarbo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/urbanist"
+                android:text="26,95 gr"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textColor="@color/white_500"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tvValueProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/urbanist"
+                android:gravity="center_horizontal"
+                android:text="0,39 gr"
+                android:layout_weight="1"
+                android:textColor="@color/white_500"
+                android:textSize="15dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="320dp"
+            android:layout_gravity="center"
+            android:layout_height="150dp"
+            app:cardCornerRadius="15dp"
+            android:background="@color/colorPrimary"
+            android:elevation="15dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center|left">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="90dp"
+                    android:layout_marginLeft="20dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_height="90dp">
+
+
+                    <ImageView
+                        android:id="@+id/cart_product"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/apple_season"/>
+                </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="12dp"
+                android:orientation="vertical"
+                android:paddingTop="35dp"
+                android:gravity="left">
+                    <TextView
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/cart_product_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:text="Fresh Apple Nutrition"
+                        android:fontFamily="@font/urbanist_black"/>
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/cart_product_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="See Detail Nutritions"
+                        android:fontFamily="@font/urbanist"/>
+
+            </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

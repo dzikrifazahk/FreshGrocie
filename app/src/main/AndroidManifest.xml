@@ -24,6 +24,9 @@
         android:theme="@style/Theme.fresgrocie"
         tools:targetApi="31">
         <activity
+            android:name=".ui.ReceiptActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.NutritionActivity"
             android:exported="false" />
         <activity

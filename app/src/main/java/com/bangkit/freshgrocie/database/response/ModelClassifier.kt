@@ -121,7 +121,7 @@ class ModelClassifier(private val context: Context) {
         var index = getMaxResult(output[0])
 
 //        return "Ouput is ${labels[index]}\n Inference Time $inferenceTime ms"
-        return "Ouput is ${labels[index]}"
+        return "Yaay.. \n The Ouput is ${labels[index]}"
     }
 
 

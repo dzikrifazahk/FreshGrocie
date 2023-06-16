@@ -1,6 +1,7 @@
 package com.bangkit.freshgrocie.ui
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import android.widget.Button
 import android.widget.Toast
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
@@ -35,14 +37,25 @@ class CameraActivity : AppCompatActivity() {
     private var currentBitmapForInference: Bitmap? = null
 
     private lateinit var cameraExecutor: ExecutorService
-
     private var tfLiteClassifier: ModelClassifier = ModelClassifier(this@CameraActivity)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCameraBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+            binding.btnSeeNutrition.setOnClickListener {
+//            val nutrition = Intent()
+//            nutrition.setClass(applicationContext, NutritionActivity::class.java)
+//            startActivity(nutrition)
+                Toast.makeText(applicationContext, "Helo", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(applicationContext, NutritionActivity::class.java))
+            }
+        binding.btnMakeAFood.setOnClickListener {
+            startActivity(Intent(applicationContext, ReceiptActivity::class.java))
+        }
 
+
+
+        setContentView(binding.root)
         if (allPermissionsGranted()) {
             startCamera()
         } else {
@@ -67,6 +80,8 @@ class CameraActivity : AppCompatActivity() {
                 println("Exception: $e")
             }
         }
+
+
     }
 
     private fun startCamera() {

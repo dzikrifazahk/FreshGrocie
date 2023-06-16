@@ -111,7 +111,6 @@ class HomeFragment : Fragment() {
                 }
                 binding.nearLocationButton.setOnClickListener {
 //                    startActivity(Intent(context, PickLocationActivity::class.java))
-
                     val intent = Intent(context, PickLocationActivity::class.java)
                     resultLauncher.launch(intent)
                     Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()

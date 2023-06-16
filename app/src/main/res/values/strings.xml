@@ -113,6 +113,7 @@
     <string name="text_canceled">Canceled</string>
     <string name="your_web_client_id">1001</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="_5_0">5.0</string>
 
 
 </resources>
