@@ -42,13 +42,14 @@ class CameraActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCameraBinding.inflate(layoutInflater)
-            binding.btnSeeNutrition.setOnClickListener {
-//            val nutrition = Intent()
-//            nutrition.setClass(applicationContext, NutritionActivity::class.java)
-//            startActivity(nutrition)
-                Toast.makeText(applicationContext, "Helo", Toast.LENGTH_SHORT).show()
+
+        //Navigation
+        binding.btnSeeNutrition.setOnClickListener {
             startActivity(Intent(applicationContext, NutritionActivity::class.java))
-            }
+        }
+        binding.backButton.setOnClickListener {
+            startActivity(Intent(applicationContext, HomeActivity::class.java))
+        }
         binding.btnMakeAFood.setOnClickListener {
             startActivity(Intent(applicationContext, ReceiptActivity::class.java))
         }

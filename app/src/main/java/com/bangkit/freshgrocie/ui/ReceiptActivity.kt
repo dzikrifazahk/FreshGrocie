@@ -15,7 +15,7 @@ class ReceiptActivity : AppCompatActivity() {
         binding.backButton.setOnClickListener {
             startActivity(Intent(applicationContext, CameraActivity::class.java))
         }
-        
+
         setContentView(binding.root)
     }
 }
