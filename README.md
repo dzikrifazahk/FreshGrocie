@@ -1,30 +1,72 @@
-# FreshGrocie app is a BANGKIT-PROJECT
-<p align="center">
-    <img src="https://github.com/Dzikrifaza/FreshGrocie/blob/mobile_dev/FreshGrocie.png?raw=true">
+# FreshGrocie REST API
 
+## Features
 
-## _Develop by_
-<table style="width:100%; border: none;">
-  <tr>
-    <th colspan="2"><p align="center">
-    <img src="https://github.com/Dzikrifaza/FreshGrocie/blob/mobile_dev/bangkit.png?raw=true"></th>
-  </tr>
-  <tr>
-    <td><p align="center">
-    <img src="https://github.com/Dzikrifaza/FreshGrocie/blob/mobile_dev/Brawijaya?raw=true"></td>
-    <td><p align="center">
-    <img style="width:50%; height:50%" src="https://github.com/Dzikrifaza/FreshGrocie/blob/mobile_dev/Polindra?raw=true"></td>
-  </tr>
-</table>
+- [x] User CRUD
+  - [x] Get Users
+  - [x] Get User by Id
+  - [x] Create User
+  - [x] Update User
+  - [x] Delete User
+- [x] User/Chart
+  - [x] Create Chart Based on User Id
+  - [x] Get Chart Based on User Id 
+- [x] User/Transaction
+  - [x] Create Transaction Based on User Id
+  - [x] Get Transaction Based on User Id  
+- [x] Product CRUD
+  - [x] Get Products
+  - [x] Get Product by Id
+  - [x] Create Product
+  - [x] Update Product
+  - [x] Delete Product
+- [x] Store CRUD
+  - [x] Get Stores
+  - [x] Get Store by Id
+  - [x] Create Store
+  - [x] Update Store
+  - [x] Delete Store
+- [x] Transaction CRUD
+  - [x] Get Transactions
+  - [x] Get Transaction by Id
+  - [x] Create Transaction
+  - [x] Update Transaction
+  - [x] Delete Transaction
+- [x] Accessing Fatsecret (on development)
+  - [x] Get Product by Id
+  - [x] Get Products by name (search product by name)
 
-### Delegate of Politeknik Negeri Indramayu
-- Filemon Sitanggang - Mobile Developer
-- Dzikri Faza Hauna Kusnadi - Mobile Developer
-- Aditya Hadi - Cloud Computing
-### Delegate of Universitas Brawijaya
-- Rahma Nur Fitriyani - Machine Learning Developer
-- Diana Ayu Suma Putri - Machine Learning Developer
-- Samuel Djodi - Cloud Computing
+## Installation
 
-# *BANGKIT 2023 Capstone Project, Go To Best Project*
+## Prerequisites
 
+- [Node.js](https://nodejs.org/en/)
+- [Firebase](https://www.mysql.com/)
+- [Google Cloud Firestore](https://cloud.google.com/firestore)
+- [Google Cloud Function](https://cloud.google.com/functions)
+- [Google Cloud Storage](https://cloud.google.com/storage)
+
+## Setup
+- clone this project **`git clone https://github.com/Fashionism-Bangkit-Capstone/Fashionism-Cloud-Computing.git`**
+- checkout to backend-rest-api branch **`git checkout cc_dev`**
+- open the project with an IDE
+- install all dependencies **`npm install`**
+
+## Configure the Service Accounts
+- Add service accounts for firebase SDK and google cloud storage creator and place inside this repository folder
+
+## Run the Server
+- Change directory to functions (cd ./functions)
+- Run the server with **`npm run dev`**
+
+## Libraries
+- Express
+- Firebase Admin
+- Axios
+- Cors
+- Firebase Function
+- Moment
+- Multer
+
+## Deployment
+Deployed using firebase cloud function with : "firebase deploy --only functions"
