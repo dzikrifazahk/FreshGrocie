@@ -6,7 +6,7 @@ import com.bangkit.freshgrocie.database.remote.ApiService
 import com.bangkit.freshgrocie.database.response.ResponseProductItem
 import java.lang.Exception
 
-class ProductRepository(private val service: ApiService) {
+class ProductRepository (private val service: ApiService) {
     fun getProduct(): LiveData<List<ResponseProductItem>> = liveData{
         try {
             val response = service.getProduct()

@@ -75,27 +75,24 @@ data class ResponseStoresItem(
 //	val marker: String,
 ) : Parcelable {
 	constructor(parcel: Parcel) : this(
-	parcel.readString() ?: "",
-		parcel.readString() ?: "",
-		parcel.readString() ?: "",
-	parcel.readString() ?: "",
-	parcel.readString() ?: "",
-	parcel.readString() ?: "",
-	parcel.readString() ?: "",
-//		parcel.readParcelable()?:""
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString()
 	) {
 	}
 
 	override fun writeToParcel(parcel: Parcel, flags: Int) {
-		parcel.writeString(id)
-		parcel.writeValue(storeAddress)
-		parcel.writeValue(storeDescription)
-		parcel.writeString(storeLocation)
 		parcel.writeString(storeProduct)
 		parcel.writeString(storePhoto)
 		parcel.writeString(storeName)
-		// show case photobooth
-	// parcel.writeArray(storePhoto)
+		parcel.writeString(storeAddress)
+		parcel.writeString(id)
+		parcel.writeString(storeLocation)
+		parcel.writeString(storeDescription)
 	}
 
 	override fun describeContents(): Int {
